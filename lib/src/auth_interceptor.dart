@@ -92,6 +92,9 @@ Interceptor authInterceptor({
 
         // Start a new refresh.
         final completer = Completer<void>();
+        // Ensure the completer's error doesn't become unhandled if no
+        // concurrent request is waiting on it.
+        completer.future.ignore();
         refreshCompleter = completer;
         try {
           final storedRefreshToken = await tokenStore.refreshToken;
