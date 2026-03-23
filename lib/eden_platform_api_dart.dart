@@ -1,3 +1,4 @@
+export 'src/auth_interceptor.dart';
 export 'src/platform_transport.dart';
 export 'src/gen/platform/v1/auth.pb.dart';
 export 'src/gen/platform/v1/auth.connect.client.dart';
