@@ -1,0 +1,14 @@
+name: eden_platform_api_dart
+description: Generated Dart clients and protobuf models for Eden platform services.
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.11.1
+
+dependencies:
+  connectrpc: ^1.0.0
+  protobuf: ^4.2.0
+
+dev_dependencies:
+  lints: ^6.0.0

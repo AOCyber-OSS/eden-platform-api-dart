@@ -1,0 +1,68 @@
+{
+  "roots": [
+    "eden_platform_api_dart"
+  ],
+  "packages": [
+    {
+      "name": "eden_platform_api_dart",
+      "version": "0.1.0",
+      "dependencies": [
+        "connectrpc",
+        "protobuf"
+      ],
+      "devDependencies": [
+        "lints"
+      ]
+    },
+    {
+      "name": "lints",
+      "version": "6.1.0",
+      "dependencies": []
+    },
+    {
+      "name": "protobuf",
+      "version": "4.2.0",
+      "dependencies": [
+        "collection",
+        "fixnum",
+        "meta"
+      ]
+    },
+    {
+      "name": "connectrpc",
+      "version": "1.0.0",
+      "dependencies": [
+        "fixnum",
+        "http2",
+        "path",
+        "protobuf"
+      ]
+    },
+    {
+      "name": "meta",
+      "version": "1.18.2",
+      "dependencies": []
+    },
+    {
+      "name": "fixnum",
+      "version": "1.1.1",
+      "dependencies": []
+    },
+    {
+      "name": "collection",
+      "version": "1.19.1",
+      "dependencies": []
+    },
+    {
+      "name": "http2",
+      "version": "2.3.1",
+      "dependencies": []
+    },
+    {
+      "name": "path",
+      "version": "1.9.1",
+      "dependencies": []
+    }
+  ],
+  "configVersion": 1
+}
