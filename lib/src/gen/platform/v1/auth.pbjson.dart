@@ -101,6 +101,7 @@ const User$json = {
     {'1': 'display_name', '3': 3, '4': 1, '5': 9, '10': 'displayName'},
     {'1': 'is_active', '3': 4, '4': 1, '5': 8, '10': 'isActive'},
     {'1': 'created_at', '3': 5, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'avatar_url', '3': 6, '4': 1, '5': 9, '10': 'avatarUrl'},
   ],
 };
 
@@ -108,7 +109,8 @@ const User$json = {
 final $typed_data.Uint8List userDescriptor = $convert.base64Decode(
     'CgRVc2VyEg4KAmlkGAEgASgJUgJpZBIUCgVlbWFpbBgCIAEoCVIFZW1haWwSIQoMZGlzcGxheV'
     '9uYW1lGAMgASgJUgtkaXNwbGF5TmFtZRIbCglpc19hY3RpdmUYBCABKAhSCGlzQWN0aXZlEh0K'
-    'CmNyZWF0ZWRfYXQYBSABKAlSCWNyZWF0ZWRBdA==');
+    'CmNyZWF0ZWRfYXQYBSABKAlSCWNyZWF0ZWRBdBIdCgphdmF0YXJfdXJsGAYgASgJUglhdmF0YX'
+    'JVcmw=');
 
 @$core.Deprecated('Use initiateOIDCRequestDescriptor instead')
 const InitiateOIDCRequest$json = {
@@ -161,6 +163,33 @@ final $typed_data.Uint8List initiateSAMLResponseDescriptor = $convert.base64Deco
     'ChRJbml0aWF0ZVNBTUxSZXNwb25zZRIhCgxyZWRpcmVjdF91cmwYASABKAlSC3JlZGlyZWN0VX'
     'Js');
 
+@$core.Deprecated('Use updateProfileRequestDescriptor instead')
+const UpdateProfileRequest$json = {
+  '1': 'UpdateProfileRequest',
+  '2': [
+    {'1': 'display_name', '3': 1, '4': 1, '5': 9, '10': 'displayName'},
+    {'1': 'avatar_url', '3': 2, '4': 1, '5': 9, '10': 'avatarUrl'},
+  ],
+};
+
+/// Descriptor for `UpdateProfileRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateProfileRequestDescriptor = $convert.base64Decode(
+    'ChRVcGRhdGVQcm9maWxlUmVxdWVzdBIhCgxkaXNwbGF5X25hbWUYASABKAlSC2Rpc3BsYXlOYW'
+    '1lEh0KCmF2YXRhcl91cmwYAiABKAlSCWF2YXRhclVybA==');
+
+@$core.Deprecated('Use updateProfileResponseDescriptor instead')
+const UpdateProfileResponse$json = {
+  '1': 'UpdateProfileResponse',
+  '2': [
+    {'1': 'user', '3': 1, '4': 1, '5': 11, '6': '.platform.v1.User', '10': 'user'},
+  ],
+};
+
+/// Descriptor for `UpdateProfileResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateProfileResponseDescriptor = $convert.base64Decode(
+    'ChVVcGRhdGVQcm9maWxlUmVzcG9uc2USJQoEdXNlchgBIAEoCzIRLnBsYXRmb3JtLnYxLlVzZX'
+    'JSBHVzZXI=');
+
 const $core.Map<$core.String, $core.dynamic> AuthServiceBase$json = {
   '1': 'AuthService',
   '2': [
@@ -170,6 +199,7 @@ const $core.Map<$core.String, $core.dynamic> AuthServiceBase$json = {
     {'1': 'Logout', '2': '.platform.v1.LogoutRequest', '3': '.platform.v1.LogoutResponse'},
     {'1': 'InitiateOIDC', '2': '.platform.v1.InitiateOIDCRequest', '3': '.platform.v1.InitiateOIDCResponse'},
     {'1': 'InitiateSAML', '2': '.platform.v1.InitiateSAMLRequest', '3': '.platform.v1.InitiateSAMLResponse'},
+    {'1': 'UpdateProfile', '2': '.platform.v1.UpdateProfileRequest', '3': '.platform.v1.UpdateProfileResponse'},
   ],
 };
 
@@ -186,6 +216,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> AuthServic
   '.platform.v1.InitiateOIDCResponse': InitiateOIDCResponse$json,
   '.platform.v1.InitiateSAMLRequest': InitiateSAMLRequest$json,
   '.platform.v1.InitiateSAMLResponse': InitiateSAMLResponse$json,
+  '.platform.v1.UpdateProfileRequest': UpdateProfileRequest$json,
+  '.platform.v1.UpdateProfileResponse': UpdateProfileResponse$json,
 };
 
 /// Descriptor for `AuthService`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -198,5 +230,6 @@ final $typed_data.Uint8List authServiceDescriptor = $convert.base64Decode(
     'Jlc3BvbnNlElMKDEluaXRpYXRlT0lEQxIgLnBsYXRmb3JtLnYxLkluaXRpYXRlT0lEQ1JlcXVl'
     'c3QaIS5wbGF0Zm9ybS52MS5Jbml0aWF0ZU9JRENSZXNwb25zZRJTCgxJbml0aWF0ZVNBTUwSIC'
     '5wbGF0Zm9ybS52MS5Jbml0aWF0ZVNBTUxSZXF1ZXN0GiEucGxhdGZvcm0udjEuSW5pdGlhdGVT'
-    'QU1MUmVzcG9uc2U=');
+    'QU1MUmVzcG9uc2USVgoNVXBkYXRlUHJvZmlsZRIhLnBsYXRmb3JtLnYxLlVwZGF0ZVByb2ZpbG'
+    'VSZXF1ZXN0GiIucGxhdGZvcm0udjEuVXBkYXRlUHJvZmlsZVJlc3BvbnNl');
 

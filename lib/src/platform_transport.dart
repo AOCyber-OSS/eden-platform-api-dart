@@ -1,7 +1,10 @@
 import 'package:connectrpc/connect.dart';
 import 'package:connectrpc/protobuf.dart';
 import 'package:connectrpc/protocol/connect.dart' as connect_protocol;
-import 'package:connectrpc/http2.dart';
+
+import 'http_client_stub.dart'
+    if (dart.library.io) 'http_client_io.dart'
+    if (dart.library.js_interop) 'http_client_web.dart';
 
 import 'auth_interceptor.dart';
 
@@ -15,7 +18,7 @@ Transport createPlatformTransport({
 }) {
   return connect_protocol.Transport(
     baseUrl: baseUrl,
-    codec: const ProtoCodec(),
+    codec: const JsonCodec(),
     httpClient: createHttpClient(),
     interceptors: interceptors.toList(),
   );

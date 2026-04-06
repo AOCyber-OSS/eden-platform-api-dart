@@ -116,6 +116,7 @@ class NavItem extends $pb.GeneratedMessage {
     $core.String? path,
     $core.String? feature,
     $core.int? priority,
+    $core.String? section,
   }) {
     final $result = create();
     if (id != null) {
@@ -136,6 +137,9 @@ class NavItem extends $pb.GeneratedMessage {
     if (priority != null) {
       $result.priority = priority;
     }
+    if (section != null) {
+      $result.section = section;
+    }
     return $result;
   }
   NavItem._() : super();
@@ -149,6 +153,7 @@ class NavItem extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'path')
     ..aOS(5, _omitFieldNames ? '' : 'feature')
     ..a<$core.int>(6, _omitFieldNames ? '' : 'priority', $pb.PbFieldType.O3)
+    ..aOS(7, _omitFieldNames ? '' : 'section')
     ..hasRequiredFields = false
   ;
 
@@ -226,6 +231,15 @@ class NavItem extends $pb.GeneratedMessage {
   $core.bool hasPriority() => $_has(5);
   @$pb.TagNumber(6)
   void clearPriority() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get section => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set section($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasSection() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSection() => clearField(7);
 }
 
 class GetWidgetsRequest extends $pb.GeneratedMessage {

@@ -27,6 +27,7 @@ abstract class AuthServiceBase extends $pb.GeneratedService {
   $async.Future<$1.LogoutResponse> logout($pb.ServerContext ctx, $1.LogoutRequest request);
   $async.Future<$1.InitiateOIDCResponse> initiateOIDC($pb.ServerContext ctx, $1.InitiateOIDCRequest request);
   $async.Future<$1.InitiateSAMLResponse> initiateSAML($pb.ServerContext ctx, $1.InitiateSAMLRequest request);
+  $async.Future<$1.UpdateProfileResponse> updateProfile($pb.ServerContext ctx, $1.UpdateProfileRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -36,6 +37,7 @@ abstract class AuthServiceBase extends $pb.GeneratedService {
       case 'Logout': return $1.LogoutRequest();
       case 'InitiateOIDC': return $1.InitiateOIDCRequest();
       case 'InitiateSAML': return $1.InitiateSAMLRequest();
+      case 'UpdateProfile': return $1.UpdateProfileRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -48,6 +50,7 @@ abstract class AuthServiceBase extends $pb.GeneratedService {
       case 'Logout': return this.logout(ctx, request as $1.LogoutRequest);
       case 'InitiateOIDC': return this.initiateOIDC(ctx, request as $1.InitiateOIDCRequest);
       case 'InitiateSAML': return this.initiateSAML(ctx, request as $1.InitiateSAMLRequest);
+      case 'UpdateProfile': return this.updateProfile(ctx, request as $1.UpdateProfileRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

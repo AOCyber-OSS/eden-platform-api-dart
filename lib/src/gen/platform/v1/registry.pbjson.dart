@@ -48,6 +48,7 @@ const NavItem$json = {
     {'1': 'path', '3': 4, '4': 1, '5': 9, '10': 'path'},
     {'1': 'feature', '3': 5, '4': 1, '5': 9, '10': 'feature'},
     {'1': 'priority', '3': 6, '4': 1, '5': 5, '10': 'priority'},
+    {'1': 'section', '3': 7, '4': 1, '5': 9, '10': 'section'},
   ],
 };
 
@@ -55,7 +56,8 @@ const NavItem$json = {
 final $typed_data.Uint8List navItemDescriptor = $convert.base64Decode(
     'CgdOYXZJdGVtEg4KAmlkGAEgASgJUgJpZBIUCgVsYWJlbBgCIAEoCVIFbGFiZWwSEgoEaWNvbh'
     'gDIAEoCVIEaWNvbhISCgRwYXRoGAQgASgJUgRwYXRoEhgKB2ZlYXR1cmUYBSABKAlSB2ZlYXR1'
-    'cmUSGgoIcHJpb3JpdHkYBiABKAVSCHByaW9yaXR5');
+    'cmUSGgoIcHJpb3JpdHkYBiABKAVSCHByaW9yaXR5EhgKB3NlY3Rpb24YByABKAlSB3NlY3Rpb2'
+    '4=');
 
 @$core.Deprecated('Use getWidgetsRequestDescriptor instead')
 const GetWidgetsRequest$json = {

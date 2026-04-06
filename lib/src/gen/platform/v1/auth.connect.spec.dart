@@ -52,4 +52,11 @@ abstract final class AuthService {
     platformv1auth.InitiateSAMLRequest.new,
     platformv1auth.InitiateSAMLResponse.new,
   );
+
+  static const updateProfile = connect.Spec(
+    '/$name/UpdateProfile',
+    connect.StreamType.unary,
+    platformv1auth.UpdateProfileRequest.new,
+    platformv1auth.UpdateProfileResponse.new,
+  );
 }

@@ -6,3 +6,5 @@ export 'src/gen/platform/v1/company.pb.dart';
 export 'src/gen/platform/v1/company.connect.client.dart';
 export 'src/gen/platform/v1/registry.pb.dart';
 export 'src/gen/platform/v1/registry.connect.client.dart';
+export 'src/gen/platform/v1/audit.pb.dart';
+export 'src/gen/platform/v1/audit.connect.client.dart';
