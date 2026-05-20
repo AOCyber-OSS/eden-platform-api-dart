@@ -86,8 +86,11 @@ class RegisterWebhookRequest extends $pb.GeneratedMessage {
   $core.List<$core.String> get events => $_getList(2);
 }
 
-class WebhookResponse extends $pb.GeneratedMessage {
-  factory WebhookResponse({
+/// WebhookData is the shared webhook payload wrapped by RegisterWebhookResponse
+/// and contained in ListWebhooksResponse. Per buf STANDARD lint convention
+/// (RPC_REQUEST_RESPONSE_UNIQUE).
+class WebhookData extends $pb.GeneratedMessage {
+  factory WebhookData({
     $core.String? id,
     $core.String? companyId,
     $core.String? url,
@@ -120,11 +123,11 @@ class WebhookResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  WebhookResponse._() : super();
-  factory WebhookResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory WebhookResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  WebhookData._() : super();
+  factory WebhookData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WebhookData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WebhookResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WebhookData', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'companyId')
     ..aOS(3, _omitFieldNames ? '' : 'url')
@@ -139,22 +142,22 @@ class WebhookResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  WebhookResponse clone() => WebhookResponse()..mergeFromMessage(this);
+  WebhookData clone() => WebhookData()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  WebhookResponse copyWith(void Function(WebhookResponse) updates) => super.copyWith((message) => updates(message as WebhookResponse)) as WebhookResponse;
+  WebhookData copyWith(void Function(WebhookData) updates) => super.copyWith((message) => updates(message as WebhookData)) as WebhookData;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static WebhookResponse create() => WebhookResponse._();
-  WebhookResponse createEmptyInstance() => create();
-  static $pb.PbList<WebhookResponse> createRepeated() => $pb.PbList<WebhookResponse>();
+  static WebhookData create() => WebhookData._();
+  WebhookData createEmptyInstance() => create();
+  static $pb.PbList<WebhookData> createRepeated() => $pb.PbList<WebhookData>();
   @$core.pragma('dart2js:noInline')
-  static WebhookResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WebhookResponse>(create);
-  static WebhookResponse? _defaultInstance;
+  static WebhookData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WebhookData>(create);
+  static WebhookData? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
@@ -214,6 +217,58 @@ class WebhookResponse extends $pb.GeneratedMessage {
   void clearCreatedAt() => clearField(7);
 }
 
+class RegisterWebhookResponse extends $pb.GeneratedMessage {
+  factory RegisterWebhookResponse({
+    WebhookData? webhook,
+  }) {
+    final $result = create();
+    if (webhook != null) {
+      $result.webhook = webhook;
+    }
+    return $result;
+  }
+  RegisterWebhookResponse._() : super();
+  factory RegisterWebhookResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RegisterWebhookResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterWebhookResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+    ..aOM<WebhookData>(1, _omitFieldNames ? '' : 'webhook', subBuilder: WebhookData.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RegisterWebhookResponse clone() => RegisterWebhookResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RegisterWebhookResponse copyWith(void Function(RegisterWebhookResponse) updates) => super.copyWith((message) => updates(message as RegisterWebhookResponse)) as RegisterWebhookResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterWebhookResponse create() => RegisterWebhookResponse._();
+  RegisterWebhookResponse createEmptyInstance() => create();
+  static $pb.PbList<RegisterWebhookResponse> createRepeated() => $pb.PbList<RegisterWebhookResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RegisterWebhookResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegisterWebhookResponse>(create);
+  static RegisterWebhookResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  WebhookData get webhook => $_getN(0);
+  @$pb.TagNumber(1)
+  set webhook(WebhookData v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasWebhook() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWebhook() => clearField(1);
+  @$pb.TagNumber(1)
+  WebhookData ensureWebhook() => $_ensure(0);
+}
+
 class ListWebhooksRequest extends $pb.GeneratedMessage {
   factory ListWebhooksRequest({
     $core.String? companyId,
@@ -266,7 +321,7 @@ class ListWebhooksRequest extends $pb.GeneratedMessage {
 
 class ListWebhooksResponse extends $pb.GeneratedMessage {
   factory ListWebhooksResponse({
-    $core.Iterable<WebhookResponse>? webhooks,
+    $core.Iterable<WebhookData>? webhooks,
   }) {
     final $result = create();
     if (webhooks != null) {
@@ -279,7 +334,7 @@ class ListWebhooksResponse extends $pb.GeneratedMessage {
   factory ListWebhooksResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListWebhooksResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
-    ..pc<WebhookResponse>(1, _omitFieldNames ? '' : 'webhooks', $pb.PbFieldType.PM, subBuilder: WebhookResponse.create)
+    ..pc<WebhookData>(1, _omitFieldNames ? '' : 'webhooks', $pb.PbFieldType.PM, subBuilder: WebhookData.create)
     ..hasRequiredFields = false
   ;
 
@@ -305,7 +360,7 @@ class ListWebhooksResponse extends $pb.GeneratedMessage {
   static ListWebhooksResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<WebhookResponse> get webhooks => $_getList(0);
+  $core.List<WebhookData> get webhooks => $_getList(0);
 }
 
 class DeleteWebhookRequest extends $pb.GeneratedMessage {
@@ -650,8 +705,8 @@ class WebhookServiceApi {
   $pb.RpcClient _client;
   WebhookServiceApi(this._client);
 
-  $async.Future<WebhookResponse> registerWebhook($pb.ClientContext? ctx, RegisterWebhookRequest request) =>
-    _client.invoke<WebhookResponse>(ctx, 'WebhookService', 'RegisterWebhook', request, WebhookResponse())
+  $async.Future<RegisterWebhookResponse> registerWebhook($pb.ClientContext? ctx, RegisterWebhookRequest request) =>
+    _client.invoke<RegisterWebhookResponse>(ctx, 'WebhookService', 'RegisterWebhook', request, RegisterWebhookResponse())
   ;
   $async.Future<ListWebhooksResponse> listWebhooks($pb.ClientContext? ctx, ListWebhooksRequest request) =>
     _client.invoke<ListWebhooksResponse>(ctx, 'WebhookService', 'ListWebhooks', request, ListWebhooksResponse())

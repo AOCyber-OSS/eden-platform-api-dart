@@ -21,12 +21,12 @@ import 'company.pbjson.dart';
 export 'company.pb.dart';
 
 abstract class CompanyServiceBase extends $pb.GeneratedService {
-  $async.Future<$3.CompanyResponse> createCompany($pb.ServerContext ctx, $3.CreateCompanyRequest request);
-  $async.Future<$3.CompanyResponse> getCompany($pb.ServerContext ctx, $3.GetCompanyRequest request);
-  $async.Future<$3.CompanyResponse> updateCompany($pb.ServerContext ctx, $3.UpdateCompanyRequest request);
+  $async.Future<$3.CreateCompanyResponse> createCompany($pb.ServerContext ctx, $3.CreateCompanyRequest request);
+  $async.Future<$3.GetCompanyResponse> getCompany($pb.ServerContext ctx, $3.GetCompanyRequest request);
+  $async.Future<$3.UpdateCompanyResponse> updateCompany($pb.ServerContext ctx, $3.UpdateCompanyRequest request);
   $async.Future<$3.ListCompaniesResponse> listCompanies($pb.ServerContext ctx, $3.ListCompaniesRequest request);
-  $async.Future<$3.ListCompaniesResponse> getAncestors($pb.ServerContext ctx, $3.GetAncestorsRequest request);
-  $async.Future<$3.ListCompaniesResponse> getDescendants($pb.ServerContext ctx, $3.GetDescendantsRequest request);
+  $async.Future<$3.GetAncestorsResponse> getAncestors($pb.ServerContext ctx, $3.GetAncestorsRequest request);
+  $async.Future<$3.GetDescendantsResponse> getDescendants($pb.ServerContext ctx, $3.GetDescendantsRequest request);
   $async.Future<$3.GetEffectiveSettingsResponse> getEffectiveSettings($pb.ServerContext ctx, $3.GetEffectiveSettingsRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {

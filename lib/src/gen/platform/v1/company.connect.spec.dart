@@ -15,21 +15,21 @@ abstract final class CompanyService {
     '/$name/CreateCompany',
     connect.StreamType.unary,
     platformv1company.CreateCompanyRequest.new,
-    platformv1company.CompanyResponse.new,
+    platformv1company.CreateCompanyResponse.new,
   );
 
   static const getCompany = connect.Spec(
     '/$name/GetCompany',
     connect.StreamType.unary,
     platformv1company.GetCompanyRequest.new,
-    platformv1company.CompanyResponse.new,
+    platformv1company.GetCompanyResponse.new,
   );
 
   static const updateCompany = connect.Spec(
     '/$name/UpdateCompany',
     connect.StreamType.unary,
     platformv1company.UpdateCompanyRequest.new,
-    platformv1company.CompanyResponse.new,
+    platformv1company.UpdateCompanyResponse.new,
   );
 
   static const listCompanies = connect.Spec(
@@ -43,14 +43,14 @@ abstract final class CompanyService {
     '/$name/GetAncestors',
     connect.StreamType.unary,
     platformv1company.GetAncestorsRequest.new,
-    platformv1company.ListCompaniesResponse.new,
+    platformv1company.GetAncestorsResponse.new,
   );
 
   static const getDescendants = connect.Spec(
     '/$name/GetDescendants',
     connect.StreamType.unary,
     platformv1company.GetDescendantsRequest.new,
-    platformv1company.ListCompaniesResponse.new,
+    platformv1company.GetDescendantsResponse.new,
   );
 
   static const getEffectiveSettings = connect.Spec(

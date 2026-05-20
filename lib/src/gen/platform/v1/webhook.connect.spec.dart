@@ -15,7 +15,7 @@ abstract final class WebhookService {
     '/$name/RegisterWebhook',
     connect.StreamType.unary,
     platformv1webhook.RegisterWebhookRequest.new,
-    platformv1webhook.WebhookResponse.new,
+    platformv1webhook.RegisterWebhookResponse.new,
   );
 
   static const listWebhooks = connect.Spec(

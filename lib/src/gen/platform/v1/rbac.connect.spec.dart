@@ -22,7 +22,7 @@ abstract final class RBACService {
     '/$name/CreateRole',
     connect.StreamType.unary,
     platformv1rbac.CreateRoleRequest.new,
-    platformv1rbac.RoleResponse.new,
+    platformv1rbac.CreateRoleResponse.new,
   );
 
   static const assignRole = connect.Spec(

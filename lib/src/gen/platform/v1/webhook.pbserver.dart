@@ -21,7 +21,7 @@ import 'webhook.pbjson.dart';
 export 'webhook.pb.dart';
 
 abstract class WebhookServiceBase extends $pb.GeneratedService {
-  $async.Future<$6.WebhookResponse> registerWebhook($pb.ServerContext ctx, $6.RegisterWebhookRequest request);
+  $async.Future<$6.RegisterWebhookResponse> registerWebhook($pb.ServerContext ctx, $6.RegisterWebhookRequest request);
   $async.Future<$6.ListWebhooksResponse> listWebhooks($pb.ServerContext ctx, $6.ListWebhooksRequest request);
   $async.Future<$6.DeleteWebhookResponse> deleteWebhook($pb.ServerContext ctx, $6.DeleteWebhookRequest request);
   $async.Future<$6.ListDeliveriesResponse> listDeliveries($pb.ServerContext ctx, $6.ListDeliveriesRequest request);

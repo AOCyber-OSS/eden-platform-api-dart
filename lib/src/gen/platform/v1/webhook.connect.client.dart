@@ -9,7 +9,7 @@ import "webhook.connect.spec.dart" as specs;
 
 /// WebhookService manages webhook subscriptions and deliveries.
 extension type WebhookServiceClient (connect.Transport _transport) {
-  Future<platformv1webhook.WebhookResponse> registerWebhook(
+  Future<platformv1webhook.RegisterWebhookResponse> registerWebhook(
     platformv1webhook.RegisterWebhookRequest input, {
     connect.Headers? headers,
     connect.AbortSignal? signal,

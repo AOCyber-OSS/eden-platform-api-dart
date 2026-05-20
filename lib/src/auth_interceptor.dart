@@ -110,8 +110,8 @@ Interceptor authInterceptor({
           );
 
           await tokenStore.setTokens(
-            accessToken: response.accessToken,
-            refreshToken: response.refreshToken,
+            accessToken: response.auth.accessToken,
+            refreshToken: response.auth.refreshToken,
           );
 
           completer.complete();

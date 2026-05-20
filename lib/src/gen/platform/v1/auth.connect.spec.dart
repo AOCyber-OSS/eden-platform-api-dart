@@ -15,21 +15,21 @@ abstract final class AuthService {
     '/$name/SignUp',
     connect.StreamType.unary,
     platformv1auth.SignUpRequest.new,
-    platformv1auth.AuthResponse.new,
+    platformv1auth.SignUpResponse.new,
   );
 
   static const login = connect.Spec(
     '/$name/Login',
     connect.StreamType.unary,
     platformv1auth.LoginRequest.new,
-    platformv1auth.AuthResponse.new,
+    platformv1auth.LoginResponse.new,
   );
 
   static const refreshToken = connect.Spec(
     '/$name/RefreshToken',
     connect.StreamType.unary,
     platformv1auth.RefreshTokenRequest.new,
-    platformv1auth.AuthResponse.new,
+    platformv1auth.RefreshTokenResponse.new,
   );
 
   static const logout = connect.Spec(

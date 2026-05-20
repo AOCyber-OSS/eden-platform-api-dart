@@ -29,18 +29,18 @@ final $typed_data.Uint8List listRolesRequestDescriptor = $convert.base64Decode(
 const ListRolesResponse$json = {
   '1': 'ListRolesResponse',
   '2': [
-    {'1': 'roles', '3': 1, '4': 3, '5': 11, '6': '.platform.v1.RoleResponse', '10': 'roles'},
+    {'1': 'roles', '3': 1, '4': 3, '5': 11, '6': '.platform.v1.RoleData', '10': 'roles'},
   ],
 };
 
 /// Descriptor for `ListRolesResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listRolesResponseDescriptor = $convert.base64Decode(
-    'ChFMaXN0Um9sZXNSZXNwb25zZRIvCgVyb2xlcxgBIAMoCzIZLnBsYXRmb3JtLnYxLlJvbGVSZX'
-    'Nwb25zZVIFcm9sZXM=');
+    'ChFMaXN0Um9sZXNSZXNwb25zZRIrCgVyb2xlcxgBIAMoCzIVLnBsYXRmb3JtLnYxLlJvbGVEYX'
+    'RhUgVyb2xlcw==');
 
-@$core.Deprecated('Use roleResponseDescriptor instead')
-const RoleResponse$json = {
-  '1': 'RoleResponse',
+@$core.Deprecated('Use roleDataDescriptor instead')
+const RoleData$json = {
+  '1': 'RoleData',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
@@ -50,11 +50,24 @@ const RoleResponse$json = {
   ],
 };
 
-/// Descriptor for `RoleResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List roleResponseDescriptor = $convert.base64Decode(
-    'CgxSb2xlUmVzcG9uc2USDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZG'
-    'VzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEhQKBWxldmVsGAQgASgFUgVsZXZlbBIbCglp'
-    'c19zeXN0ZW0YBSABKAhSCGlzU3lzdGVt');
+/// Descriptor for `RoleData`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List roleDataDescriptor = $convert.base64Decode(
+    'CghSb2xlRGF0YRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcm'
+    'lwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24SFAoFbGV2ZWwYBCABKAVSBWxldmVsEhsKCWlzX3N5'
+    'c3RlbRgFIAEoCFIIaXNTeXN0ZW0=');
+
+@$core.Deprecated('Use createRoleResponseDescriptor instead')
+const CreateRoleResponse$json = {
+  '1': 'CreateRoleResponse',
+  '2': [
+    {'1': 'role', '3': 1, '4': 1, '5': 11, '6': '.platform.v1.RoleData', '10': 'role'},
+  ],
+};
+
+/// Descriptor for `CreateRoleResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createRoleResponseDescriptor = $convert.base64Decode(
+    'ChJDcmVhdGVSb2xlUmVzcG9uc2USKQoEcm9sZRgBIAEoCzIVLnBsYXRmb3JtLnYxLlJvbGVEYX'
+    'RhUgRyb2xl');
 
 @$core.Deprecated('Use createRoleRequestDescriptor instead')
 const CreateRoleRequest$json = {
@@ -180,15 +193,15 @@ const GetUserPermissionsResponse$json = {
   '1': 'GetUserPermissionsResponse',
   '2': [
     {'1': 'permissions', '3': 1, '4': 3, '5': 11, '6': '.platform.v1.PermissionResponse', '10': 'permissions'},
-    {'1': 'role', '3': 2, '4': 1, '5': 11, '6': '.platform.v1.RoleResponse', '10': 'role'},
+    {'1': 'role', '3': 2, '4': 1, '5': 11, '6': '.platform.v1.RoleData', '10': 'role'},
   ],
 };
 
 /// Descriptor for `GetUserPermissionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getUserPermissionsResponseDescriptor = $convert.base64Decode(
     'ChpHZXRVc2VyUGVybWlzc2lvbnNSZXNwb25zZRJBCgtwZXJtaXNzaW9ucxgBIAMoCzIfLnBsYX'
-    'Rmb3JtLnYxLlBlcm1pc3Npb25SZXNwb25zZVILcGVybWlzc2lvbnMSLQoEcm9sZRgCIAEoCzIZ'
-    'LnBsYXRmb3JtLnYxLlJvbGVSZXNwb25zZVIEcm9sZQ==');
+    'Rmb3JtLnYxLlBlcm1pc3Npb25SZXNwb25zZVILcGVybWlzc2lvbnMSKQoEcm9sZRgCIAEoCzIV'
+    'LnBsYXRmb3JtLnYxLlJvbGVEYXRhUgRyb2xl');
 
 @$core.Deprecated('Use checkPermissionRequestDescriptor instead')
 const CheckPermissionRequest$json = {
@@ -261,7 +274,7 @@ const $core.Map<$core.String, $core.dynamic> RBACServiceBase$json = {
   '1': 'RBACService',
   '2': [
     {'1': 'ListRoles', '2': '.platform.v1.ListRolesRequest', '3': '.platform.v1.ListRolesResponse'},
-    {'1': 'CreateRole', '2': '.platform.v1.CreateRoleRequest', '3': '.platform.v1.RoleResponse'},
+    {'1': 'CreateRole', '2': '.platform.v1.CreateRoleRequest', '3': '.platform.v1.CreateRoleResponse'},
     {'1': 'AssignRole', '2': '.platform.v1.AssignRoleRequest', '3': '.platform.v1.AssignRoleResponse'},
     {'1': 'RemoveRole', '2': '.platform.v1.RemoveRoleRequest', '3': '.platform.v1.RemoveRoleResponse'},
     {'1': 'ListPermissions', '2': '.platform.v1.ListPermissionsRequest', '3': '.platform.v1.ListPermissionsResponse'},
@@ -275,8 +288,9 @@ const $core.Map<$core.String, $core.dynamic> RBACServiceBase$json = {
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> RBACServiceBase$messageJson = {
   '.platform.v1.ListRolesRequest': ListRolesRequest$json,
   '.platform.v1.ListRolesResponse': ListRolesResponse$json,
-  '.platform.v1.RoleResponse': RoleResponse$json,
+  '.platform.v1.RoleData': RoleData$json,
   '.platform.v1.CreateRoleRequest': CreateRoleRequest$json,
+  '.platform.v1.CreateRoleResponse': CreateRoleResponse$json,
   '.platform.v1.AssignRoleRequest': AssignRoleRequest$json,
   '.platform.v1.AssignRoleResponse': AssignRoleResponse$json,
   '.platform.v1.RemoveRoleRequest': RemoveRoleRequest$json,
@@ -295,16 +309,16 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> RBACServic
 /// Descriptor for `RBACService`. Decode as a `google.protobuf.ServiceDescriptorProto`.
 final $typed_data.Uint8List rBACServiceDescriptor = $convert.base64Decode(
     'CgtSQkFDU2VydmljZRJKCglMaXN0Um9sZXMSHS5wbGF0Zm9ybS52MS5MaXN0Um9sZXNSZXF1ZX'
-    'N0Gh4ucGxhdGZvcm0udjEuTGlzdFJvbGVzUmVzcG9uc2USRwoKQ3JlYXRlUm9sZRIeLnBsYXRm'
-    'b3JtLnYxLkNyZWF0ZVJvbGVSZXF1ZXN0GhkucGxhdGZvcm0udjEuUm9sZVJlc3BvbnNlEk0KCk'
-    'Fzc2lnblJvbGUSHi5wbGF0Zm9ybS52MS5Bc3NpZ25Sb2xlUmVxdWVzdBofLnBsYXRmb3JtLnYx'
-    'LkFzc2lnblJvbGVSZXNwb25zZRJNCgpSZW1vdmVSb2xlEh4ucGxhdGZvcm0udjEuUmVtb3ZlUm'
-    '9sZVJlcXVlc3QaHy5wbGF0Zm9ybS52MS5SZW1vdmVSb2xlUmVzcG9uc2USXAoPTGlzdFBlcm1p'
-    'c3Npb25zEiMucGxhdGZvcm0udjEuTGlzdFBlcm1pc3Npb25zUmVxdWVzdBokLnBsYXRmb3JtLn'
-    'YxLkxpc3RQZXJtaXNzaW9uc1Jlc3BvbnNlEmUKEkdldFVzZXJQZXJtaXNzaW9ucxImLnBsYXRm'
-    'b3JtLnYxLkdldFVzZXJQZXJtaXNzaW9uc1JlcXVlc3QaJy5wbGF0Zm9ybS52MS5HZXRVc2VyUG'
-    'VybWlzc2lvbnNSZXNwb25zZRJcCg9DaGVja1Blcm1pc3Npb24SIy5wbGF0Zm9ybS52MS5DaGVj'
-    'a1Blcm1pc3Npb25SZXF1ZXN0GiQucGxhdGZvcm0udjEuQ2hlY2tQZXJtaXNzaW9uUmVzcG9uc2'
-    'USYgoRUmVzb2x2ZU1lbWJlcnNoaXASJS5wbGF0Zm9ybS52MS5SZXNvbHZlTWVtYmVyc2hpcFJl'
-    'cXVlc3QaJi5wbGF0Zm9ybS52MS5SZXNvbHZlTWVtYmVyc2hpcFJlc3BvbnNl');
+    'N0Gh4ucGxhdGZvcm0udjEuTGlzdFJvbGVzUmVzcG9uc2USTQoKQ3JlYXRlUm9sZRIeLnBsYXRm'
+    'b3JtLnYxLkNyZWF0ZVJvbGVSZXF1ZXN0Gh8ucGxhdGZvcm0udjEuQ3JlYXRlUm9sZVJlc3Bvbn'
+    'NlEk0KCkFzc2lnblJvbGUSHi5wbGF0Zm9ybS52MS5Bc3NpZ25Sb2xlUmVxdWVzdBofLnBsYXRm'
+    'b3JtLnYxLkFzc2lnblJvbGVSZXNwb25zZRJNCgpSZW1vdmVSb2xlEh4ucGxhdGZvcm0udjEuUm'
+    'Vtb3ZlUm9sZVJlcXVlc3QaHy5wbGF0Zm9ybS52MS5SZW1vdmVSb2xlUmVzcG9uc2USXAoPTGlz'
+    'dFBlcm1pc3Npb25zEiMucGxhdGZvcm0udjEuTGlzdFBlcm1pc3Npb25zUmVxdWVzdBokLnBsYX'
+    'Rmb3JtLnYxLkxpc3RQZXJtaXNzaW9uc1Jlc3BvbnNlEmUKEkdldFVzZXJQZXJtaXNzaW9ucxIm'
+    'LnBsYXRmb3JtLnYxLkdldFVzZXJQZXJtaXNzaW9uc1JlcXVlc3QaJy5wbGF0Zm9ybS52MS5HZX'
+    'RVc2VyUGVybWlzc2lvbnNSZXNwb25zZRJcCg9DaGVja1Blcm1pc3Npb24SIy5wbGF0Zm9ybS52'
+    'MS5DaGVja1Blcm1pc3Npb25SZXF1ZXN0GiQucGxhdGZvcm0udjEuQ2hlY2tQZXJtaXNzaW9uUm'
+    'VzcG9uc2USYgoRUmVzb2x2ZU1lbWJlcnNoaXASJS5wbGF0Zm9ybS52MS5SZXNvbHZlTWVtYmVy'
+    'c2hpcFJlcXVlc3QaJi5wbGF0Zm9ybS52MS5SZXNvbHZlTWVtYmVyc2hpcFJlc3BvbnNl');
 

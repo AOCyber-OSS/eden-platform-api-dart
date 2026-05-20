@@ -288,8 +288,11 @@ class LogoutResponse extends $pb.GeneratedMessage {
   static LogoutResponse? _defaultInstance;
 }
 
-class AuthResponse extends $pb.GeneratedMessage {
-  factory AuthResponse({
+/// AuthData is the shared authentication payload returned by SignUp,
+/// Login, and RefreshToken. Wrapped in per-RPC response types per
+/// buf STANDARD lint convention (RPC_REQUEST_RESPONSE_UNIQUE).
+class AuthData extends $pb.GeneratedMessage {
+  factory AuthData({
     $core.String? accessToken,
     $core.String? refreshToken,
     User? user,
@@ -306,11 +309,11 @@ class AuthResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  AuthResponse._() : super();
-  factory AuthResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AuthResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  AuthData._() : super();
+  factory AuthData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AuthData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AuthResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AuthData', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'accessToken')
     ..aOS(2, _omitFieldNames ? '' : 'refreshToken')
     ..aOM<User>(3, _omitFieldNames ? '' : 'user', subBuilder: User.create)
@@ -321,22 +324,22 @@ class AuthResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  AuthResponse clone() => AuthResponse()..mergeFromMessage(this);
+  AuthData clone() => AuthData()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AuthResponse copyWith(void Function(AuthResponse) updates) => super.copyWith((message) => updates(message as AuthResponse)) as AuthResponse;
+  AuthData copyWith(void Function(AuthData) updates) => super.copyWith((message) => updates(message as AuthData)) as AuthData;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static AuthResponse create() => AuthResponse._();
-  AuthResponse createEmptyInstance() => create();
-  static $pb.PbList<AuthResponse> createRepeated() => $pb.PbList<AuthResponse>();
+  static AuthData create() => AuthData._();
+  AuthData createEmptyInstance() => create();
+  static $pb.PbList<AuthData> createRepeated() => $pb.PbList<AuthData>();
   @$core.pragma('dart2js:noInline')
-  static AuthResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AuthResponse>(create);
-  static AuthResponse? _defaultInstance;
+  static AuthData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AuthData>(create);
+  static AuthData? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get accessToken => $_getSZ(0);
@@ -366,6 +369,162 @@ class AuthResponse extends $pb.GeneratedMessage {
   void clearUser() => clearField(3);
   @$pb.TagNumber(3)
   User ensureUser() => $_ensure(2);
+}
+
+class SignUpResponse extends $pb.GeneratedMessage {
+  factory SignUpResponse({
+    AuthData? auth,
+  }) {
+    final $result = create();
+    if (auth != null) {
+      $result.auth = auth;
+    }
+    return $result;
+  }
+  SignUpResponse._() : super();
+  factory SignUpResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SignUpResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SignUpResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+    ..aOM<AuthData>(1, _omitFieldNames ? '' : 'auth', subBuilder: AuthData.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SignUpResponse clone() => SignUpResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SignUpResponse copyWith(void Function(SignUpResponse) updates) => super.copyWith((message) => updates(message as SignUpResponse)) as SignUpResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SignUpResponse create() => SignUpResponse._();
+  SignUpResponse createEmptyInstance() => create();
+  static $pb.PbList<SignUpResponse> createRepeated() => $pb.PbList<SignUpResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SignUpResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SignUpResponse>(create);
+  static SignUpResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AuthData get auth => $_getN(0);
+  @$pb.TagNumber(1)
+  set auth(AuthData v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAuth() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAuth() => clearField(1);
+  @$pb.TagNumber(1)
+  AuthData ensureAuth() => $_ensure(0);
+}
+
+class LoginResponse extends $pb.GeneratedMessage {
+  factory LoginResponse({
+    AuthData? auth,
+  }) {
+    final $result = create();
+    if (auth != null) {
+      $result.auth = auth;
+    }
+    return $result;
+  }
+  LoginResponse._() : super();
+  factory LoginResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LoginResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+    ..aOM<AuthData>(1, _omitFieldNames ? '' : 'auth', subBuilder: AuthData.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  LoginResponse clone() => LoginResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LoginResponse copyWith(void Function(LoginResponse) updates) => super.copyWith((message) => updates(message as LoginResponse)) as LoginResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LoginResponse create() => LoginResponse._();
+  LoginResponse createEmptyInstance() => create();
+  static $pb.PbList<LoginResponse> createRepeated() => $pb.PbList<LoginResponse>();
+  @$core.pragma('dart2js:noInline')
+  static LoginResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LoginResponse>(create);
+  static LoginResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AuthData get auth => $_getN(0);
+  @$pb.TagNumber(1)
+  set auth(AuthData v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAuth() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAuth() => clearField(1);
+  @$pb.TagNumber(1)
+  AuthData ensureAuth() => $_ensure(0);
+}
+
+class RefreshTokenResponse extends $pb.GeneratedMessage {
+  factory RefreshTokenResponse({
+    AuthData? auth,
+  }) {
+    final $result = create();
+    if (auth != null) {
+      $result.auth = auth;
+    }
+    return $result;
+  }
+  RefreshTokenResponse._() : super();
+  factory RefreshTokenResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RefreshTokenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RefreshTokenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+    ..aOM<AuthData>(1, _omitFieldNames ? '' : 'auth', subBuilder: AuthData.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RefreshTokenResponse clone() => RefreshTokenResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RefreshTokenResponse copyWith(void Function(RefreshTokenResponse) updates) => super.copyWith((message) => updates(message as RefreshTokenResponse)) as RefreshTokenResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RefreshTokenResponse create() => RefreshTokenResponse._();
+  RefreshTokenResponse createEmptyInstance() => create();
+  static $pb.PbList<RefreshTokenResponse> createRepeated() => $pb.PbList<RefreshTokenResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RefreshTokenResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RefreshTokenResponse>(create);
+  static RefreshTokenResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AuthData get auth => $_getN(0);
+  @$pb.TagNumber(1)
+  set auth(AuthData v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAuth() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAuth() => clearField(1);
+  @$pb.TagNumber(1)
+  AuthData ensureAuth() => $_ensure(0);
 }
 
 class User extends $pb.GeneratedMessage {
@@ -822,14 +981,14 @@ class AuthServiceApi {
   $pb.RpcClient _client;
   AuthServiceApi(this._client);
 
-  $async.Future<AuthResponse> signUp($pb.ClientContext? ctx, SignUpRequest request) =>
-    _client.invoke<AuthResponse>(ctx, 'AuthService', 'SignUp', request, AuthResponse())
+  $async.Future<SignUpResponse> signUp($pb.ClientContext? ctx, SignUpRequest request) =>
+    _client.invoke<SignUpResponse>(ctx, 'AuthService', 'SignUp', request, SignUpResponse())
   ;
-  $async.Future<AuthResponse> login($pb.ClientContext? ctx, LoginRequest request) =>
-    _client.invoke<AuthResponse>(ctx, 'AuthService', 'Login', request, AuthResponse())
+  $async.Future<LoginResponse> login($pb.ClientContext? ctx, LoginRequest request) =>
+    _client.invoke<LoginResponse>(ctx, 'AuthService', 'Login', request, LoginResponse())
   ;
-  $async.Future<AuthResponse> refreshToken($pb.ClientContext? ctx, RefreshTokenRequest request) =>
-    _client.invoke<AuthResponse>(ctx, 'AuthService', 'RefreshToken', request, AuthResponse())
+  $async.Future<RefreshTokenResponse> refreshToken($pb.ClientContext? ctx, RefreshTokenRequest request) =>
+    _client.invoke<RefreshTokenResponse>(ctx, 'AuthService', 'RefreshToken', request, RefreshTokenResponse())
   ;
   $async.Future<LogoutResponse> logout($pb.ClientContext? ctx, LogoutRequest request) =>
     _client.invoke<LogoutResponse>(ctx, 'AuthService', 'Logout', request, LogoutResponse())

@@ -22,7 +22,7 @@ export 'rbac.pb.dart';
 
 abstract class RBACServiceBase extends $pb.GeneratedService {
   $async.Future<$4.ListRolesResponse> listRoles($pb.ServerContext ctx, $4.ListRolesRequest request);
-  $async.Future<$4.RoleResponse> createRole($pb.ServerContext ctx, $4.CreateRoleRequest request);
+  $async.Future<$4.CreateRoleResponse> createRole($pb.ServerContext ctx, $4.CreateRoleRequest request);
   $async.Future<$4.AssignRoleResponse> assignRole($pb.ServerContext ctx, $4.AssignRoleRequest request);
   $async.Future<$4.RemoveRoleResponse> removeRole($pb.ServerContext ctx, $4.RemoveRoleRequest request);
   $async.Future<$4.ListPermissionsResponse> listPermissions($pb.ServerContext ctx, $4.ListPermissionsRequest request);

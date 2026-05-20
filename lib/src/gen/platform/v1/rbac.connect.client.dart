@@ -26,7 +26,7 @@ extension type RBACServiceClient (connect.Transport _transport) {
     );
   }
 
-  Future<platformv1rbac.RoleResponse> createRole(
+  Future<platformv1rbac.CreateRoleResponse> createRole(
     platformv1rbac.CreateRoleRequest input, {
     connect.Headers? headers,
     connect.AbortSignal? signal,

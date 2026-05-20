@@ -536,8 +536,12 @@ class GetEffectiveSettingsResponse extends $pb.GeneratedMessage {
   void clearSettingsJson() => clearField(1);
 }
 
-class CompanyResponse extends $pb.GeneratedMessage {
-  factory CompanyResponse({
+/// CompanyData is the shared company payload returned by Create/Get/Update
+/// (wrapped in per-RPC responses) and contained in List/GetAncestors/
+/// GetDescendants list responses. Per buf STANDARD lint convention
+/// (RPC_REQUEST_RESPONSE_UNIQUE).
+class CompanyData extends $pb.GeneratedMessage {
+  factory CompanyData({
     $core.String? id,
     $core.String? name,
     $core.String? slug,
@@ -586,11 +590,11 @@ class CompanyResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  CompanyResponse._() : super();
-  factory CompanyResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CompanyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  CompanyData._() : super();
+  factory CompanyData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CompanyData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CompanyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CompanyData', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'slug')
@@ -609,22 +613,22 @@ class CompanyResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  CompanyResponse clone() => CompanyResponse()..mergeFromMessage(this);
+  CompanyData clone() => CompanyData()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CompanyResponse copyWith(void Function(CompanyResponse) updates) => super.copyWith((message) => updates(message as CompanyResponse)) as CompanyResponse;
+  CompanyData copyWith(void Function(CompanyData) updates) => super.copyWith((message) => updates(message as CompanyData)) as CompanyData;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static CompanyResponse create() => CompanyResponse._();
-  CompanyResponse createEmptyInstance() => create();
-  static $pb.PbList<CompanyResponse> createRepeated() => $pb.PbList<CompanyResponse>();
+  static CompanyData create() => CompanyData._();
+  CompanyData createEmptyInstance() => create();
+  static $pb.PbList<CompanyData> createRepeated() => $pb.PbList<CompanyData>();
   @$core.pragma('dart2js:noInline')
-  static CompanyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CompanyResponse>(create);
-  static CompanyResponse? _defaultInstance;
+  static CompanyData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CompanyData>(create);
+  static CompanyData? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
@@ -726,9 +730,165 @@ class CompanyResponse extends $pb.GeneratedMessage {
   void clearUpdatedAt() => clearField(11);
 }
 
+class CreateCompanyResponse extends $pb.GeneratedMessage {
+  factory CreateCompanyResponse({
+    CompanyData? company,
+  }) {
+    final $result = create();
+    if (company != null) {
+      $result.company = company;
+    }
+    return $result;
+  }
+  CreateCompanyResponse._() : super();
+  factory CreateCompanyResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateCompanyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateCompanyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+    ..aOM<CompanyData>(1, _omitFieldNames ? '' : 'company', subBuilder: CompanyData.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateCompanyResponse clone() => CreateCompanyResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateCompanyResponse copyWith(void Function(CreateCompanyResponse) updates) => super.copyWith((message) => updates(message as CreateCompanyResponse)) as CreateCompanyResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateCompanyResponse create() => CreateCompanyResponse._();
+  CreateCompanyResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateCompanyResponse> createRepeated() => $pb.PbList<CreateCompanyResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateCompanyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateCompanyResponse>(create);
+  static CreateCompanyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  CompanyData get company => $_getN(0);
+  @$pb.TagNumber(1)
+  set company(CompanyData v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCompany() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCompany() => clearField(1);
+  @$pb.TagNumber(1)
+  CompanyData ensureCompany() => $_ensure(0);
+}
+
+class GetCompanyResponse extends $pb.GeneratedMessage {
+  factory GetCompanyResponse({
+    CompanyData? company,
+  }) {
+    final $result = create();
+    if (company != null) {
+      $result.company = company;
+    }
+    return $result;
+  }
+  GetCompanyResponse._() : super();
+  factory GetCompanyResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetCompanyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCompanyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+    ..aOM<CompanyData>(1, _omitFieldNames ? '' : 'company', subBuilder: CompanyData.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetCompanyResponse clone() => GetCompanyResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetCompanyResponse copyWith(void Function(GetCompanyResponse) updates) => super.copyWith((message) => updates(message as GetCompanyResponse)) as GetCompanyResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCompanyResponse create() => GetCompanyResponse._();
+  GetCompanyResponse createEmptyInstance() => create();
+  static $pb.PbList<GetCompanyResponse> createRepeated() => $pb.PbList<GetCompanyResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetCompanyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCompanyResponse>(create);
+  static GetCompanyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  CompanyData get company => $_getN(0);
+  @$pb.TagNumber(1)
+  set company(CompanyData v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCompany() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCompany() => clearField(1);
+  @$pb.TagNumber(1)
+  CompanyData ensureCompany() => $_ensure(0);
+}
+
+class UpdateCompanyResponse extends $pb.GeneratedMessage {
+  factory UpdateCompanyResponse({
+    CompanyData? company,
+  }) {
+    final $result = create();
+    if (company != null) {
+      $result.company = company;
+    }
+    return $result;
+  }
+  UpdateCompanyResponse._() : super();
+  factory UpdateCompanyResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateCompanyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateCompanyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+    ..aOM<CompanyData>(1, _omitFieldNames ? '' : 'company', subBuilder: CompanyData.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateCompanyResponse clone() => UpdateCompanyResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateCompanyResponse copyWith(void Function(UpdateCompanyResponse) updates) => super.copyWith((message) => updates(message as UpdateCompanyResponse)) as UpdateCompanyResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateCompanyResponse create() => UpdateCompanyResponse._();
+  UpdateCompanyResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateCompanyResponse> createRepeated() => $pb.PbList<UpdateCompanyResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateCompanyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateCompanyResponse>(create);
+  static UpdateCompanyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  CompanyData get company => $_getN(0);
+  @$pb.TagNumber(1)
+  set company(CompanyData v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCompany() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCompany() => clearField(1);
+  @$pb.TagNumber(1)
+  CompanyData ensureCompany() => $_ensure(0);
+}
+
 class ListCompaniesResponse extends $pb.GeneratedMessage {
   factory ListCompaniesResponse({
-    $core.Iterable<CompanyResponse>? companies,
+    $core.Iterable<CompanyData>? companies,
   }) {
     final $result = create();
     if (companies != null) {
@@ -741,7 +901,7 @@ class ListCompaniesResponse extends $pb.GeneratedMessage {
   factory ListCompaniesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCompaniesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
-    ..pc<CompanyResponse>(1, _omitFieldNames ? '' : 'companies', $pb.PbFieldType.PM, subBuilder: CompanyResponse.create)
+    ..pc<CompanyData>(1, _omitFieldNames ? '' : 'companies', $pb.PbFieldType.PM, subBuilder: CompanyData.create)
     ..hasRequiredFields = false
   ;
 
@@ -767,30 +927,118 @@ class ListCompaniesResponse extends $pb.GeneratedMessage {
   static ListCompaniesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<CompanyResponse> get companies => $_getList(0);
+  $core.List<CompanyData> get companies => $_getList(0);
+}
+
+class GetAncestorsResponse extends $pb.GeneratedMessage {
+  factory GetAncestorsResponse({
+    $core.Iterable<CompanyData>? companies,
+  }) {
+    final $result = create();
+    if (companies != null) {
+      $result.companies.addAll(companies);
+    }
+    return $result;
+  }
+  GetAncestorsResponse._() : super();
+  factory GetAncestorsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetAncestorsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAncestorsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+    ..pc<CompanyData>(1, _omitFieldNames ? '' : 'companies', $pb.PbFieldType.PM, subBuilder: CompanyData.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetAncestorsResponse clone() => GetAncestorsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetAncestorsResponse copyWith(void Function(GetAncestorsResponse) updates) => super.copyWith((message) => updates(message as GetAncestorsResponse)) as GetAncestorsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAncestorsResponse create() => GetAncestorsResponse._();
+  GetAncestorsResponse createEmptyInstance() => create();
+  static $pb.PbList<GetAncestorsResponse> createRepeated() => $pb.PbList<GetAncestorsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetAncestorsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAncestorsResponse>(create);
+  static GetAncestorsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<CompanyData> get companies => $_getList(0);
+}
+
+class GetDescendantsResponse extends $pb.GeneratedMessage {
+  factory GetDescendantsResponse({
+    $core.Iterable<CompanyData>? companies,
+  }) {
+    final $result = create();
+    if (companies != null) {
+      $result.companies.addAll(companies);
+    }
+    return $result;
+  }
+  GetDescendantsResponse._() : super();
+  factory GetDescendantsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetDescendantsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDescendantsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+    ..pc<CompanyData>(1, _omitFieldNames ? '' : 'companies', $pb.PbFieldType.PM, subBuilder: CompanyData.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetDescendantsResponse clone() => GetDescendantsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetDescendantsResponse copyWith(void Function(GetDescendantsResponse) updates) => super.copyWith((message) => updates(message as GetDescendantsResponse)) as GetDescendantsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDescendantsResponse create() => GetDescendantsResponse._();
+  GetDescendantsResponse createEmptyInstance() => create();
+  static $pb.PbList<GetDescendantsResponse> createRepeated() => $pb.PbList<GetDescendantsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetDescendantsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDescendantsResponse>(create);
+  static GetDescendantsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<CompanyData> get companies => $_getList(0);
 }
 
 class CompanyServiceApi {
   $pb.RpcClient _client;
   CompanyServiceApi(this._client);
 
-  $async.Future<CompanyResponse> createCompany($pb.ClientContext? ctx, CreateCompanyRequest request) =>
-    _client.invoke<CompanyResponse>(ctx, 'CompanyService', 'CreateCompany', request, CompanyResponse())
+  $async.Future<CreateCompanyResponse> createCompany($pb.ClientContext? ctx, CreateCompanyRequest request) =>
+    _client.invoke<CreateCompanyResponse>(ctx, 'CompanyService', 'CreateCompany', request, CreateCompanyResponse())
   ;
-  $async.Future<CompanyResponse> getCompany($pb.ClientContext? ctx, GetCompanyRequest request) =>
-    _client.invoke<CompanyResponse>(ctx, 'CompanyService', 'GetCompany', request, CompanyResponse())
+  $async.Future<GetCompanyResponse> getCompany($pb.ClientContext? ctx, GetCompanyRequest request) =>
+    _client.invoke<GetCompanyResponse>(ctx, 'CompanyService', 'GetCompany', request, GetCompanyResponse())
   ;
-  $async.Future<CompanyResponse> updateCompany($pb.ClientContext? ctx, UpdateCompanyRequest request) =>
-    _client.invoke<CompanyResponse>(ctx, 'CompanyService', 'UpdateCompany', request, CompanyResponse())
+  $async.Future<UpdateCompanyResponse> updateCompany($pb.ClientContext? ctx, UpdateCompanyRequest request) =>
+    _client.invoke<UpdateCompanyResponse>(ctx, 'CompanyService', 'UpdateCompany', request, UpdateCompanyResponse())
   ;
   $async.Future<ListCompaniesResponse> listCompanies($pb.ClientContext? ctx, ListCompaniesRequest request) =>
     _client.invoke<ListCompaniesResponse>(ctx, 'CompanyService', 'ListCompanies', request, ListCompaniesResponse())
   ;
-  $async.Future<ListCompaniesResponse> getAncestors($pb.ClientContext? ctx, GetAncestorsRequest request) =>
-    _client.invoke<ListCompaniesResponse>(ctx, 'CompanyService', 'GetAncestors', request, ListCompaniesResponse())
+  $async.Future<GetAncestorsResponse> getAncestors($pb.ClientContext? ctx, GetAncestorsRequest request) =>
+    _client.invoke<GetAncestorsResponse>(ctx, 'CompanyService', 'GetAncestors', request, GetAncestorsResponse())
   ;
-  $async.Future<ListCompaniesResponse> getDescendants($pb.ClientContext? ctx, GetDescendantsRequest request) =>
-    _client.invoke<ListCompaniesResponse>(ctx, 'CompanyService', 'GetDescendants', request, ListCompaniesResponse())
+  $async.Future<GetDescendantsResponse> getDescendants($pb.ClientContext? ctx, GetDescendantsRequest request) =>
+    _client.invoke<GetDescendantsResponse>(ctx, 'CompanyService', 'GetDescendants', request, GetDescendantsResponse())
   ;
   $async.Future<GetEffectiveSettingsResponse> getEffectiveSettings($pb.ClientContext? ctx, GetEffectiveSettingsRequest request) =>
     _client.invoke<GetEffectiveSettingsResponse>(ctx, 'CompanyService', 'GetEffectiveSettings', request, GetEffectiveSettingsResponse())

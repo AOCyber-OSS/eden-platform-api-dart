@@ -9,7 +9,7 @@ import "auth.connect.spec.dart" as specs;
 
 /// AuthService handles authentication operations.
 extension type AuthServiceClient (connect.Transport _transport) {
-  Future<platformv1auth.AuthResponse> signUp(
+  Future<platformv1auth.SignUpResponse> signUp(
     platformv1auth.SignUpRequest input, {
     connect.Headers? headers,
     connect.AbortSignal? signal,
@@ -26,7 +26,7 @@ extension type AuthServiceClient (connect.Transport _transport) {
     );
   }
 
-  Future<platformv1auth.AuthResponse> login(
+  Future<platformv1auth.LoginResponse> login(
     platformv1auth.LoginRequest input, {
     connect.Headers? headers,
     connect.AbortSignal? signal,
@@ -43,7 +43,7 @@ extension type AuthServiceClient (connect.Transport _transport) {
     );
   }
 
-  Future<platformv1auth.AuthResponse> refreshToken(
+  Future<platformv1auth.RefreshTokenResponse> refreshToken(
     platformv1auth.RefreshTokenRequest input, {
     connect.Headers? headers,
     connect.AbortSignal? signal,

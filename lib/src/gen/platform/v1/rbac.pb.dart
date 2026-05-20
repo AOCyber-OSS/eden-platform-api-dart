@@ -66,7 +66,7 @@ class ListRolesRequest extends $pb.GeneratedMessage {
 
 class ListRolesResponse extends $pb.GeneratedMessage {
   factory ListRolesResponse({
-    $core.Iterable<RoleResponse>? roles,
+    $core.Iterable<RoleData>? roles,
   }) {
     final $result = create();
     if (roles != null) {
@@ -79,7 +79,7 @@ class ListRolesResponse extends $pb.GeneratedMessage {
   factory ListRolesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRolesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
-    ..pc<RoleResponse>(1, _omitFieldNames ? '' : 'roles', $pb.PbFieldType.PM, subBuilder: RoleResponse.create)
+    ..pc<RoleData>(1, _omitFieldNames ? '' : 'roles', $pb.PbFieldType.PM, subBuilder: RoleData.create)
     ..hasRequiredFields = false
   ;
 
@@ -105,11 +105,14 @@ class ListRolesResponse extends $pb.GeneratedMessage {
   static ListRolesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<RoleResponse> get roles => $_getList(0);
+  $core.List<RoleData> get roles => $_getList(0);
 }
 
-class RoleResponse extends $pb.GeneratedMessage {
-  factory RoleResponse({
+/// RoleData is the shared role payload contained in ListRolesResponse and
+/// GetUserPermissionsResponse, and wrapped by CreateRoleResponse. Per buf
+/// STANDARD lint convention (RPC_RESPONSE_STANDARD_NAME).
+class RoleData extends $pb.GeneratedMessage {
+  factory RoleData({
     $core.String? id,
     $core.String? name,
     $core.String? description,
@@ -134,11 +137,11 @@ class RoleResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  RoleResponse._() : super();
-  factory RoleResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RoleResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  RoleData._() : super();
+  factory RoleData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RoleData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RoleResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RoleData', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'description')
@@ -151,22 +154,22 @@ class RoleResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  RoleResponse clone() => RoleResponse()..mergeFromMessage(this);
+  RoleData clone() => RoleData()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RoleResponse copyWith(void Function(RoleResponse) updates) => super.copyWith((message) => updates(message as RoleResponse)) as RoleResponse;
+  RoleData copyWith(void Function(RoleData) updates) => super.copyWith((message) => updates(message as RoleData)) as RoleData;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static RoleResponse create() => RoleResponse._();
-  RoleResponse createEmptyInstance() => create();
-  static $pb.PbList<RoleResponse> createRepeated() => $pb.PbList<RoleResponse>();
+  static RoleData create() => RoleData._();
+  RoleData createEmptyInstance() => create();
+  static $pb.PbList<RoleData> createRepeated() => $pb.PbList<RoleData>();
   @$core.pragma('dart2js:noInline')
-  static RoleResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RoleResponse>(create);
-  static RoleResponse? _defaultInstance;
+  static RoleData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RoleData>(create);
+  static RoleData? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
@@ -212,6 +215,58 @@ class RoleResponse extends $pb.GeneratedMessage {
   $core.bool hasIsSystem() => $_has(4);
   @$pb.TagNumber(5)
   void clearIsSystem() => clearField(5);
+}
+
+class CreateRoleResponse extends $pb.GeneratedMessage {
+  factory CreateRoleResponse({
+    RoleData? role,
+  }) {
+    final $result = create();
+    if (role != null) {
+      $result.role = role;
+    }
+    return $result;
+  }
+  CreateRoleResponse._() : super();
+  factory CreateRoleResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateRoleResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateRoleResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+    ..aOM<RoleData>(1, _omitFieldNames ? '' : 'role', subBuilder: RoleData.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateRoleResponse clone() => CreateRoleResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateRoleResponse copyWith(void Function(CreateRoleResponse) updates) => super.copyWith((message) => updates(message as CreateRoleResponse)) as CreateRoleResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateRoleResponse create() => CreateRoleResponse._();
+  CreateRoleResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateRoleResponse> createRepeated() => $pb.PbList<CreateRoleResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateRoleResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateRoleResponse>(create);
+  static CreateRoleResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  RoleData get role => $_getN(0);
+  @$pb.TagNumber(1)
+  set role(RoleData v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasRole() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRole() => clearField(1);
+  @$pb.TagNumber(1)
+  RoleData ensureRole() => $_ensure(0);
 }
 
 class CreateRoleRequest extends $pb.GeneratedMessage {
@@ -769,7 +824,7 @@ class GetUserPermissionsRequest extends $pb.GeneratedMessage {
 class GetUserPermissionsResponse extends $pb.GeneratedMessage {
   factory GetUserPermissionsResponse({
     $core.Iterable<PermissionResponse>? permissions,
-    RoleResponse? role,
+    RoleData? role,
   }) {
     final $result = create();
     if (permissions != null) {
@@ -786,7 +841,7 @@ class GetUserPermissionsResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetUserPermissionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
     ..pc<PermissionResponse>(1, _omitFieldNames ? '' : 'permissions', $pb.PbFieldType.PM, subBuilder: PermissionResponse.create)
-    ..aOM<RoleResponse>(2, _omitFieldNames ? '' : 'role', subBuilder: RoleResponse.create)
+    ..aOM<RoleData>(2, _omitFieldNames ? '' : 'role', subBuilder: RoleData.create)
     ..hasRequiredFields = false
   ;
 
@@ -815,15 +870,15 @@ class GetUserPermissionsResponse extends $pb.GeneratedMessage {
   $core.List<PermissionResponse> get permissions => $_getList(0);
 
   @$pb.TagNumber(2)
-  RoleResponse get role => $_getN(1);
+  RoleData get role => $_getN(1);
   @$pb.TagNumber(2)
-  set role(RoleResponse v) { setField(2, v); }
+  set role(RoleData v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasRole() => $_has(1);
   @$pb.TagNumber(2)
   void clearRole() => clearField(2);
   @$pb.TagNumber(2)
-  RoleResponse ensureRole() => $_ensure(1);
+  RoleData ensureRole() => $_ensure(1);
 }
 
 class CheckPermissionRequest extends $pb.GeneratedMessage {
@@ -1187,8 +1242,8 @@ class RBACServiceApi {
   $async.Future<ListRolesResponse> listRoles($pb.ClientContext? ctx, ListRolesRequest request) =>
     _client.invoke<ListRolesResponse>(ctx, 'RBACService', 'ListRoles', request, ListRolesResponse())
   ;
-  $async.Future<RoleResponse> createRole($pb.ClientContext? ctx, CreateRoleRequest request) =>
-    _client.invoke<RoleResponse>(ctx, 'RBACService', 'CreateRole', request, RoleResponse())
+  $async.Future<CreateRoleResponse> createRole($pb.ClientContext? ctx, CreateRoleRequest request) =>
+    _client.invoke<CreateRoleResponse>(ctx, 'RBACService', 'CreateRole', request, CreateRoleResponse())
   ;
   $async.Future<AssignRoleResponse> assignRole($pb.ClientContext? ctx, AssignRoleRequest request) =>
     _client.invoke<AssignRoleResponse>(ctx, 'RBACService', 'AssignRole', request, AssignRoleResponse())

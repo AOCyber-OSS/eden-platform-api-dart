@@ -136,9 +136,9 @@ final $typed_data.Uint8List getEffectiveSettingsResponseDescriptor = $convert.ba
     'ChxHZXRFZmZlY3RpdmVTZXR0aW5nc1Jlc3BvbnNlEiMKDXNldHRpbmdzX2pzb24YASABKAlSDH'
     'NldHRpbmdzSnNvbg==');
 
-@$core.Deprecated('Use companyResponseDescriptor instead')
-const CompanyResponse$json = {
-  '1': 'CompanyResponse',
+@$core.Deprecated('Use companyDataDescriptor instead')
+const CompanyData$json = {
+  '1': 'CompanyData',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
@@ -159,40 +159,105 @@ const CompanyResponse$json = {
   ],
 };
 
-/// Descriptor for `CompanyResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List companyResponseDescriptor = $convert.base64Decode(
-    'Cg9Db21wYW55UmVzcG9uc2USDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEg'
-    'oEc2x1ZxgDIAEoCVIEc2x1ZxIhCgxjb21wYW55X3R5cGUYBCABKAlSC2NvbXBhbnlUeXBlEi8K'
-    'EXBhcmVudF9jb21wYW55X2lkGAUgASgJSABSD3BhcmVudENvbXBhbnlJZIgBARIxChJpbmhlcm'
-    'l0ZWRfcm9sZV9jYXAYBiABKAVIAVIQaW5oZXJpdGVkUm9sZUNhcIgBARI5ChZpbmhlcml0ZWRf'
-    'YWNjZXNzX2xldmVsGAcgASgJSAJSFGluaGVyaXRlZEFjY2Vzc0xldmVsiAEBEiMKDXNldHRpbm'
-    'dzX2pzb24YCCABKAlSDHNldHRpbmdzSnNvbhIbCglpc19hY3RpdmUYCSABKAhSCGlzQWN0aXZl'
-    'Eh0KCmNyZWF0ZWRfYXQYCiABKAlSCWNyZWF0ZWRBdBIdCgp1cGRhdGVkX2F0GAsgASgJUgl1cG'
-    'RhdGVkQXRCFAoSX3BhcmVudF9jb21wYW55X2lkQhUKE19pbmhlcml0ZWRfcm9sZV9jYXBCGQoX'
-    'X2luaGVyaXRlZF9hY2Nlc3NfbGV2ZWw=');
+/// Descriptor for `CompanyData`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List companyDataDescriptor = $convert.base64Decode(
+    'CgtDb21wYW55RGF0YRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRzbH'
+    'VnGAMgASgJUgRzbHVnEiEKDGNvbXBhbnlfdHlwZRgEIAEoCVILY29tcGFueVR5cGUSLwoRcGFy'
+    'ZW50X2NvbXBhbnlfaWQYBSABKAlIAFIPcGFyZW50Q29tcGFueUlkiAEBEjEKEmluaGVyaXRlZF'
+    '9yb2xlX2NhcBgGIAEoBUgBUhBpbmhlcml0ZWRSb2xlQ2FwiAEBEjkKFmluaGVyaXRlZF9hY2Nl'
+    'c3NfbGV2ZWwYByABKAlIAlIUaW5oZXJpdGVkQWNjZXNzTGV2ZWyIAQESIwoNc2V0dGluZ3Nfan'
+    'NvbhgIIAEoCVIMc2V0dGluZ3NKc29uEhsKCWlzX2FjdGl2ZRgJIAEoCFIIaXNBY3RpdmUSHQoK'
+    'Y3JlYXRlZF9hdBgKIAEoCVIJY3JlYXRlZEF0Eh0KCnVwZGF0ZWRfYXQYCyABKAlSCXVwZGF0ZW'
+    'RBdEIUChJfcGFyZW50X2NvbXBhbnlfaWRCFQoTX2luaGVyaXRlZF9yb2xlX2NhcEIZChdfaW5o'
+    'ZXJpdGVkX2FjY2Vzc19sZXZlbA==');
+
+@$core.Deprecated('Use createCompanyResponseDescriptor instead')
+const CreateCompanyResponse$json = {
+  '1': 'CreateCompanyResponse',
+  '2': [
+    {'1': 'company', '3': 1, '4': 1, '5': 11, '6': '.platform.v1.CompanyData', '10': 'company'},
+  ],
+};
+
+/// Descriptor for `CreateCompanyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createCompanyResponseDescriptor = $convert.base64Decode(
+    'ChVDcmVhdGVDb21wYW55UmVzcG9uc2USMgoHY29tcGFueRgBIAEoCzIYLnBsYXRmb3JtLnYxLk'
+    'NvbXBhbnlEYXRhUgdjb21wYW55');
+
+@$core.Deprecated('Use getCompanyResponseDescriptor instead')
+const GetCompanyResponse$json = {
+  '1': 'GetCompanyResponse',
+  '2': [
+    {'1': 'company', '3': 1, '4': 1, '5': 11, '6': '.platform.v1.CompanyData', '10': 'company'},
+  ],
+};
+
+/// Descriptor for `GetCompanyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCompanyResponseDescriptor = $convert.base64Decode(
+    'ChJHZXRDb21wYW55UmVzcG9uc2USMgoHY29tcGFueRgBIAEoCzIYLnBsYXRmb3JtLnYxLkNvbX'
+    'BhbnlEYXRhUgdjb21wYW55');
+
+@$core.Deprecated('Use updateCompanyResponseDescriptor instead')
+const UpdateCompanyResponse$json = {
+  '1': 'UpdateCompanyResponse',
+  '2': [
+    {'1': 'company', '3': 1, '4': 1, '5': 11, '6': '.platform.v1.CompanyData', '10': 'company'},
+  ],
+};
+
+/// Descriptor for `UpdateCompanyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateCompanyResponseDescriptor = $convert.base64Decode(
+    'ChVVcGRhdGVDb21wYW55UmVzcG9uc2USMgoHY29tcGFueRgBIAEoCzIYLnBsYXRmb3JtLnYxLk'
+    'NvbXBhbnlEYXRhUgdjb21wYW55');
 
 @$core.Deprecated('Use listCompaniesResponseDescriptor instead')
 const ListCompaniesResponse$json = {
   '1': 'ListCompaniesResponse',
   '2': [
-    {'1': 'companies', '3': 1, '4': 3, '5': 11, '6': '.platform.v1.CompanyResponse', '10': 'companies'},
+    {'1': 'companies', '3': 1, '4': 3, '5': 11, '6': '.platform.v1.CompanyData', '10': 'companies'},
   ],
 };
 
 /// Descriptor for `ListCompaniesResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listCompaniesResponseDescriptor = $convert.base64Decode(
-    'ChVMaXN0Q29tcGFuaWVzUmVzcG9uc2USOgoJY29tcGFuaWVzGAEgAygLMhwucGxhdGZvcm0udj'
-    'EuQ29tcGFueVJlc3BvbnNlUgljb21wYW5pZXM=');
+    'ChVMaXN0Q29tcGFuaWVzUmVzcG9uc2USNgoJY29tcGFuaWVzGAEgAygLMhgucGxhdGZvcm0udj'
+    'EuQ29tcGFueURhdGFSCWNvbXBhbmllcw==');
+
+@$core.Deprecated('Use getAncestorsResponseDescriptor instead')
+const GetAncestorsResponse$json = {
+  '1': 'GetAncestorsResponse',
+  '2': [
+    {'1': 'companies', '3': 1, '4': 3, '5': 11, '6': '.platform.v1.CompanyData', '10': 'companies'},
+  ],
+};
+
+/// Descriptor for `GetAncestorsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAncestorsResponseDescriptor = $convert.base64Decode(
+    'ChRHZXRBbmNlc3RvcnNSZXNwb25zZRI2Cgljb21wYW5pZXMYASADKAsyGC5wbGF0Zm9ybS52MS'
+    '5Db21wYW55RGF0YVIJY29tcGFuaWVz');
+
+@$core.Deprecated('Use getDescendantsResponseDescriptor instead')
+const GetDescendantsResponse$json = {
+  '1': 'GetDescendantsResponse',
+  '2': [
+    {'1': 'companies', '3': 1, '4': 3, '5': 11, '6': '.platform.v1.CompanyData', '10': 'companies'},
+  ],
+};
+
+/// Descriptor for `GetDescendantsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDescendantsResponseDescriptor = $convert.base64Decode(
+    'ChZHZXREZXNjZW5kYW50c1Jlc3BvbnNlEjYKCWNvbXBhbmllcxgBIAMoCzIYLnBsYXRmb3JtLn'
+    'YxLkNvbXBhbnlEYXRhUgljb21wYW5pZXM=');
 
 const $core.Map<$core.String, $core.dynamic> CompanyServiceBase$json = {
   '1': 'CompanyService',
   '2': [
-    {'1': 'CreateCompany', '2': '.platform.v1.CreateCompanyRequest', '3': '.platform.v1.CompanyResponse'},
-    {'1': 'GetCompany', '2': '.platform.v1.GetCompanyRequest', '3': '.platform.v1.CompanyResponse'},
-    {'1': 'UpdateCompany', '2': '.platform.v1.UpdateCompanyRequest', '3': '.platform.v1.CompanyResponse'},
+    {'1': 'CreateCompany', '2': '.platform.v1.CreateCompanyRequest', '3': '.platform.v1.CreateCompanyResponse'},
+    {'1': 'GetCompany', '2': '.platform.v1.GetCompanyRequest', '3': '.platform.v1.GetCompanyResponse'},
+    {'1': 'UpdateCompany', '2': '.platform.v1.UpdateCompanyRequest', '3': '.platform.v1.UpdateCompanyResponse'},
     {'1': 'ListCompanies', '2': '.platform.v1.ListCompaniesRequest', '3': '.platform.v1.ListCompaniesResponse'},
-    {'1': 'GetAncestors', '2': '.platform.v1.GetAncestorsRequest', '3': '.platform.v1.ListCompaniesResponse'},
-    {'1': 'GetDescendants', '2': '.platform.v1.GetDescendantsRequest', '3': '.platform.v1.ListCompaniesResponse'},
+    {'1': 'GetAncestors', '2': '.platform.v1.GetAncestorsRequest', '3': '.platform.v1.GetAncestorsResponse'},
+    {'1': 'GetDescendants', '2': '.platform.v1.GetDescendantsRequest', '3': '.platform.v1.GetDescendantsResponse'},
     {'1': 'GetEffectiveSettings', '2': '.platform.v1.GetEffectiveSettingsRequest', '3': '.platform.v1.GetEffectiveSettingsResponse'},
   ],
 };
@@ -200,29 +265,34 @@ const $core.Map<$core.String, $core.dynamic> CompanyServiceBase$json = {
 @$core.Deprecated('Use companyServiceDescriptor instead')
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> CompanyServiceBase$messageJson = {
   '.platform.v1.CreateCompanyRequest': CreateCompanyRequest$json,
-  '.platform.v1.CompanyResponse': CompanyResponse$json,
+  '.platform.v1.CreateCompanyResponse': CreateCompanyResponse$json,
+  '.platform.v1.CompanyData': CompanyData$json,
   '.platform.v1.GetCompanyRequest': GetCompanyRequest$json,
+  '.platform.v1.GetCompanyResponse': GetCompanyResponse$json,
   '.platform.v1.UpdateCompanyRequest': UpdateCompanyRequest$json,
+  '.platform.v1.UpdateCompanyResponse': UpdateCompanyResponse$json,
   '.platform.v1.ListCompaniesRequest': ListCompaniesRequest$json,
   '.platform.v1.ListCompaniesResponse': ListCompaniesResponse$json,
   '.platform.v1.GetAncestorsRequest': GetAncestorsRequest$json,
+  '.platform.v1.GetAncestorsResponse': GetAncestorsResponse$json,
   '.platform.v1.GetDescendantsRequest': GetDescendantsRequest$json,
+  '.platform.v1.GetDescendantsResponse': GetDescendantsResponse$json,
   '.platform.v1.GetEffectiveSettingsRequest': GetEffectiveSettingsRequest$json,
   '.platform.v1.GetEffectiveSettingsResponse': GetEffectiveSettingsResponse$json,
 };
 
 /// Descriptor for `CompanyService`. Decode as a `google.protobuf.ServiceDescriptorProto`.
 final $typed_data.Uint8List companyServiceDescriptor = $convert.base64Decode(
-    'Cg5Db21wYW55U2VydmljZRJQCg1DcmVhdGVDb21wYW55EiEucGxhdGZvcm0udjEuQ3JlYXRlQ2'
-    '9tcGFueVJlcXVlc3QaHC5wbGF0Zm9ybS52MS5Db21wYW55UmVzcG9uc2USSgoKR2V0Q29tcGFu'
-    'eRIeLnBsYXRmb3JtLnYxLkdldENvbXBhbnlSZXF1ZXN0GhwucGxhdGZvcm0udjEuQ29tcGFueV'
-    'Jlc3BvbnNlElAKDVVwZGF0ZUNvbXBhbnkSIS5wbGF0Zm9ybS52MS5VcGRhdGVDb21wYW55UmVx'
-    'dWVzdBocLnBsYXRmb3JtLnYxLkNvbXBhbnlSZXNwb25zZRJWCg1MaXN0Q29tcGFuaWVzEiEucG'
-    'xhdGZvcm0udjEuTGlzdENvbXBhbmllc1JlcXVlc3QaIi5wbGF0Zm9ybS52MS5MaXN0Q29tcGFu'
-    'aWVzUmVzcG9uc2USVAoMR2V0QW5jZXN0b3JzEiAucGxhdGZvcm0udjEuR2V0QW5jZXN0b3JzUm'
-    'VxdWVzdBoiLnBsYXRmb3JtLnYxLkxpc3RDb21wYW5pZXNSZXNwb25zZRJYCg5HZXREZXNjZW5k'
-    'YW50cxIiLnBsYXRmb3JtLnYxLkdldERlc2NlbmRhbnRzUmVxdWVzdBoiLnBsYXRmb3JtLnYxLk'
-    'xpc3RDb21wYW5pZXNSZXNwb25zZRJrChRHZXRFZmZlY3RpdmVTZXR0aW5ncxIoLnBsYXRmb3Jt'
-    'LnYxLkdldEVmZmVjdGl2ZVNldHRpbmdzUmVxdWVzdBopLnBsYXRmb3JtLnYxLkdldEVmZmVjdG'
-    'l2ZVNldHRpbmdzUmVzcG9uc2U=');
+    'Cg5Db21wYW55U2VydmljZRJWCg1DcmVhdGVDb21wYW55EiEucGxhdGZvcm0udjEuQ3JlYXRlQ2'
+    '9tcGFueVJlcXVlc3QaIi5wbGF0Zm9ybS52MS5DcmVhdGVDb21wYW55UmVzcG9uc2USTQoKR2V0'
+    'Q29tcGFueRIeLnBsYXRmb3JtLnYxLkdldENvbXBhbnlSZXF1ZXN0Gh8ucGxhdGZvcm0udjEuR2'
+    'V0Q29tcGFueVJlc3BvbnNlElYKDVVwZGF0ZUNvbXBhbnkSIS5wbGF0Zm9ybS52MS5VcGRhdGVD'
+    'b21wYW55UmVxdWVzdBoiLnBsYXRmb3JtLnYxLlVwZGF0ZUNvbXBhbnlSZXNwb25zZRJWCg1MaX'
+    'N0Q29tcGFuaWVzEiEucGxhdGZvcm0udjEuTGlzdENvbXBhbmllc1JlcXVlc3QaIi5wbGF0Zm9y'
+    'bS52MS5MaXN0Q29tcGFuaWVzUmVzcG9uc2USUwoMR2V0QW5jZXN0b3JzEiAucGxhdGZvcm0udj'
+    'EuR2V0QW5jZXN0b3JzUmVxdWVzdBohLnBsYXRmb3JtLnYxLkdldEFuY2VzdG9yc1Jlc3BvbnNl'
+    'ElkKDkdldERlc2NlbmRhbnRzEiIucGxhdGZvcm0udjEuR2V0RGVzY2VuZGFudHNSZXF1ZXN0Gi'
+    'MucGxhdGZvcm0udjEuR2V0RGVzY2VuZGFudHNSZXNwb25zZRJrChRHZXRFZmZlY3RpdmVTZXR0'
+    'aW5ncxIoLnBsYXRmb3JtLnYxLkdldEVmZmVjdGl2ZVNldHRpbmdzUmVxdWVzdBopLnBsYXRmb3'
+    'JtLnYxLkdldEVmZmVjdGl2ZVNldHRpbmdzUmVzcG9uc2U=');
 

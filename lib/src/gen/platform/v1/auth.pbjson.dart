@@ -76,9 +76,9 @@ const LogoutResponse$json = {
 final $typed_data.Uint8List logoutResponseDescriptor = $convert.base64Decode(
     'Cg5Mb2dvdXRSZXNwb25zZQ==');
 
-@$core.Deprecated('Use authResponseDescriptor instead')
-const AuthResponse$json = {
-  '1': 'AuthResponse',
+@$core.Deprecated('Use authDataDescriptor instead')
+const AuthData$json = {
+  '1': 'AuthData',
   '2': [
     {'1': 'access_token', '3': 1, '4': 1, '5': 9, '10': 'accessToken'},
     {'1': 'refresh_token', '3': 2, '4': 1, '5': 9, '10': 'refreshToken'},
@@ -86,11 +86,50 @@ const AuthResponse$json = {
   ],
 };
 
-/// Descriptor for `AuthResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List authResponseDescriptor = $convert.base64Decode(
-    'CgxBdXRoUmVzcG9uc2USIQoMYWNjZXNzX3Rva2VuGAEgASgJUgthY2Nlc3NUb2tlbhIjCg1yZW'
-    'ZyZXNoX3Rva2VuGAIgASgJUgxyZWZyZXNoVG9rZW4SJQoEdXNlchgDIAEoCzIRLnBsYXRmb3Jt'
-    'LnYxLlVzZXJSBHVzZXI=');
+/// Descriptor for `AuthData`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List authDataDescriptor = $convert.base64Decode(
+    'CghBdXRoRGF0YRIhCgxhY2Nlc3NfdG9rZW4YASABKAlSC2FjY2Vzc1Rva2VuEiMKDXJlZnJlc2'
+    'hfdG9rZW4YAiABKAlSDHJlZnJlc2hUb2tlbhIlCgR1c2VyGAMgASgLMhEucGxhdGZvcm0udjEu'
+    'VXNlclIEdXNlcg==');
+
+@$core.Deprecated('Use signUpResponseDescriptor instead')
+const SignUpResponse$json = {
+  '1': 'SignUpResponse',
+  '2': [
+    {'1': 'auth', '3': 1, '4': 1, '5': 11, '6': '.platform.v1.AuthData', '10': 'auth'},
+  ],
+};
+
+/// Descriptor for `SignUpResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List signUpResponseDescriptor = $convert.base64Decode(
+    'Cg5TaWduVXBSZXNwb25zZRIpCgRhdXRoGAEgASgLMhUucGxhdGZvcm0udjEuQXV0aERhdGFSBG'
+    'F1dGg=');
+
+@$core.Deprecated('Use loginResponseDescriptor instead')
+const LoginResponse$json = {
+  '1': 'LoginResponse',
+  '2': [
+    {'1': 'auth', '3': 1, '4': 1, '5': 11, '6': '.platform.v1.AuthData', '10': 'auth'},
+  ],
+};
+
+/// Descriptor for `LoginResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List loginResponseDescriptor = $convert.base64Decode(
+    'Cg1Mb2dpblJlc3BvbnNlEikKBGF1dGgYASABKAsyFS5wbGF0Zm9ybS52MS5BdXRoRGF0YVIEYX'
+    'V0aA==');
+
+@$core.Deprecated('Use refreshTokenResponseDescriptor instead')
+const RefreshTokenResponse$json = {
+  '1': 'RefreshTokenResponse',
+  '2': [
+    {'1': 'auth', '3': 1, '4': 1, '5': 11, '6': '.platform.v1.AuthData', '10': 'auth'},
+  ],
+};
+
+/// Descriptor for `RefreshTokenResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List refreshTokenResponseDescriptor = $convert.base64Decode(
+    'ChRSZWZyZXNoVG9rZW5SZXNwb25zZRIpCgRhdXRoGAEgASgLMhUucGxhdGZvcm0udjEuQXV0aE'
+    'RhdGFSBGF1dGg=');
 
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = {
@@ -193,9 +232,9 @@ final $typed_data.Uint8List updateProfileResponseDescriptor = $convert.base64Dec
 const $core.Map<$core.String, $core.dynamic> AuthServiceBase$json = {
   '1': 'AuthService',
   '2': [
-    {'1': 'SignUp', '2': '.platform.v1.SignUpRequest', '3': '.platform.v1.AuthResponse'},
-    {'1': 'Login', '2': '.platform.v1.LoginRequest', '3': '.platform.v1.AuthResponse'},
-    {'1': 'RefreshToken', '2': '.platform.v1.RefreshTokenRequest', '3': '.platform.v1.AuthResponse'},
+    {'1': 'SignUp', '2': '.platform.v1.SignUpRequest', '3': '.platform.v1.SignUpResponse'},
+    {'1': 'Login', '2': '.platform.v1.LoginRequest', '3': '.platform.v1.LoginResponse'},
+    {'1': 'RefreshToken', '2': '.platform.v1.RefreshTokenRequest', '3': '.platform.v1.RefreshTokenResponse'},
     {'1': 'Logout', '2': '.platform.v1.LogoutRequest', '3': '.platform.v1.LogoutResponse'},
     {'1': 'InitiateOIDC', '2': '.platform.v1.InitiateOIDCRequest', '3': '.platform.v1.InitiateOIDCResponse'},
     {'1': 'InitiateSAML', '2': '.platform.v1.InitiateSAMLRequest', '3': '.platform.v1.InitiateSAMLResponse'},
@@ -206,10 +245,13 @@ const $core.Map<$core.String, $core.dynamic> AuthServiceBase$json = {
 @$core.Deprecated('Use authServiceDescriptor instead')
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> AuthServiceBase$messageJson = {
   '.platform.v1.SignUpRequest': SignUpRequest$json,
-  '.platform.v1.AuthResponse': AuthResponse$json,
+  '.platform.v1.SignUpResponse': SignUpResponse$json,
+  '.platform.v1.AuthData': AuthData$json,
   '.platform.v1.User': User$json,
   '.platform.v1.LoginRequest': LoginRequest$json,
+  '.platform.v1.LoginResponse': LoginResponse$json,
   '.platform.v1.RefreshTokenRequest': RefreshTokenRequest$json,
+  '.platform.v1.RefreshTokenResponse': RefreshTokenResponse$json,
   '.platform.v1.LogoutRequest': LogoutRequest$json,
   '.platform.v1.LogoutResponse': LogoutResponse$json,
   '.platform.v1.InitiateOIDCRequest': InitiateOIDCRequest$json,
@@ -222,14 +264,14 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> AuthServic
 
 /// Descriptor for `AuthService`. Decode as a `google.protobuf.ServiceDescriptorProto`.
 final $typed_data.Uint8List authServiceDescriptor = $convert.base64Decode(
-    'CgtBdXRoU2VydmljZRI/CgZTaWduVXASGi5wbGF0Zm9ybS52MS5TaWduVXBSZXF1ZXN0GhkucG'
-    'xhdGZvcm0udjEuQXV0aFJlc3BvbnNlEj0KBUxvZ2luEhkucGxhdGZvcm0udjEuTG9naW5SZXF1'
-    'ZXN0GhkucGxhdGZvcm0udjEuQXV0aFJlc3BvbnNlEksKDFJlZnJlc2hUb2tlbhIgLnBsYXRmb3'
-    'JtLnYxLlJlZnJlc2hUb2tlblJlcXVlc3QaGS5wbGF0Zm9ybS52MS5BdXRoUmVzcG9uc2USQQoG'
-    'TG9nb3V0EhoucGxhdGZvcm0udjEuTG9nb3V0UmVxdWVzdBobLnBsYXRmb3JtLnYxLkxvZ291dF'
-    'Jlc3BvbnNlElMKDEluaXRpYXRlT0lEQxIgLnBsYXRmb3JtLnYxLkluaXRpYXRlT0lEQ1JlcXVl'
-    'c3QaIS5wbGF0Zm9ybS52MS5Jbml0aWF0ZU9JRENSZXNwb25zZRJTCgxJbml0aWF0ZVNBTUwSIC'
-    '5wbGF0Zm9ybS52MS5Jbml0aWF0ZVNBTUxSZXF1ZXN0GiEucGxhdGZvcm0udjEuSW5pdGlhdGVT'
-    'QU1MUmVzcG9uc2USVgoNVXBkYXRlUHJvZmlsZRIhLnBsYXRmb3JtLnYxLlVwZGF0ZVByb2ZpbG'
-    'VSZXF1ZXN0GiIucGxhdGZvcm0udjEuVXBkYXRlUHJvZmlsZVJlc3BvbnNl');
+    'CgtBdXRoU2VydmljZRJBCgZTaWduVXASGi5wbGF0Zm9ybS52MS5TaWduVXBSZXF1ZXN0GhsucG'
+    'xhdGZvcm0udjEuU2lnblVwUmVzcG9uc2USPgoFTG9naW4SGS5wbGF0Zm9ybS52MS5Mb2dpblJl'
+    'cXVlc3QaGi5wbGF0Zm9ybS52MS5Mb2dpblJlc3BvbnNlElMKDFJlZnJlc2hUb2tlbhIgLnBsYX'
+    'Rmb3JtLnYxLlJlZnJlc2hUb2tlblJlcXVlc3QaIS5wbGF0Zm9ybS52MS5SZWZyZXNoVG9rZW5S'
+    'ZXNwb25zZRJBCgZMb2dvdXQSGi5wbGF0Zm9ybS52MS5Mb2dvdXRSZXF1ZXN0GhsucGxhdGZvcm'
+    '0udjEuTG9nb3V0UmVzcG9uc2USUwoMSW5pdGlhdGVPSURDEiAucGxhdGZvcm0udjEuSW5pdGlh'
+    'dGVPSURDUmVxdWVzdBohLnBsYXRmb3JtLnYxLkluaXRpYXRlT0lEQ1Jlc3BvbnNlElMKDEluaX'
+    'RpYXRlU0FNTBIgLnBsYXRmb3JtLnYxLkluaXRpYXRlU0FNTFJlcXVlc3QaIS5wbGF0Zm9ybS52'
+    'MS5Jbml0aWF0ZVNBTUxSZXNwb25zZRJWCg1VcGRhdGVQcm9maWxlEiEucGxhdGZvcm0udjEuVX'
+    'BkYXRlUHJvZmlsZVJlcXVlc3QaIi5wbGF0Zm9ybS52MS5VcGRhdGVQcm9maWxlUmVzcG9uc2U=');
 

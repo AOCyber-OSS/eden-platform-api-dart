@@ -28,9 +28,9 @@ final $typed_data.Uint8List registerWebhookRequestDescriptor = $convert.base64De
     'ChZSZWdpc3RlcldlYmhvb2tSZXF1ZXN0Eh0KCmNvbXBhbnlfaWQYASABKAlSCWNvbXBhbnlJZB'
     'IQCgN1cmwYAiABKAlSA3VybBIWCgZldmVudHMYAyADKAlSBmV2ZW50cw==');
 
-@$core.Deprecated('Use webhookResponseDescriptor instead')
-const WebhookResponse$json = {
-  '1': 'WebhookResponse',
+@$core.Deprecated('Use webhookDataDescriptor instead')
+const WebhookData$json = {
+  '1': 'WebhookData',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'company_id', '3': 2, '4': 1, '5': 9, '10': 'companyId'},
@@ -42,12 +42,25 @@ const WebhookResponse$json = {
   ],
 };
 
-/// Descriptor for `WebhookResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List webhookResponseDescriptor = $convert.base64Decode(
-    'Cg9XZWJob29rUmVzcG9uc2USDgoCaWQYASABKAlSAmlkEh0KCmNvbXBhbnlfaWQYAiABKAlSCW'
-    'NvbXBhbnlJZBIQCgN1cmwYAyABKAlSA3VybBIWCgZzZWNyZXQYBCABKAlSBnNlY3JldBIWCgZl'
-    'dmVudHMYBSADKAlSBmV2ZW50cxIWCgZhY3RpdmUYBiABKAhSBmFjdGl2ZRIdCgpjcmVhdGVkX2'
-    'F0GAcgASgJUgljcmVhdGVkQXQ=');
+/// Descriptor for `WebhookData`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List webhookDataDescriptor = $convert.base64Decode(
+    'CgtXZWJob29rRGF0YRIOCgJpZBgBIAEoCVICaWQSHQoKY29tcGFueV9pZBgCIAEoCVIJY29tcG'
+    'FueUlkEhAKA3VybBgDIAEoCVIDdXJsEhYKBnNlY3JldBgEIAEoCVIGc2VjcmV0EhYKBmV2ZW50'
+    'cxgFIAMoCVIGZXZlbnRzEhYKBmFjdGl2ZRgGIAEoCFIGYWN0aXZlEh0KCmNyZWF0ZWRfYXQYBy'
+    'ABKAlSCWNyZWF0ZWRBdA==');
+
+@$core.Deprecated('Use registerWebhookResponseDescriptor instead')
+const RegisterWebhookResponse$json = {
+  '1': 'RegisterWebhookResponse',
+  '2': [
+    {'1': 'webhook', '3': 1, '4': 1, '5': 11, '6': '.platform.v1.WebhookData', '10': 'webhook'},
+  ],
+};
+
+/// Descriptor for `RegisterWebhookResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List registerWebhookResponseDescriptor = $convert.base64Decode(
+    'ChdSZWdpc3RlcldlYmhvb2tSZXNwb25zZRIyCgd3ZWJob29rGAEgASgLMhgucGxhdGZvcm0udj'
+    'EuV2ViaG9va0RhdGFSB3dlYmhvb2s=');
 
 @$core.Deprecated('Use listWebhooksRequestDescriptor instead')
 const ListWebhooksRequest$json = {
@@ -65,14 +78,14 @@ final $typed_data.Uint8List listWebhooksRequestDescriptor = $convert.base64Decod
 const ListWebhooksResponse$json = {
   '1': 'ListWebhooksResponse',
   '2': [
-    {'1': 'webhooks', '3': 1, '4': 3, '5': 11, '6': '.platform.v1.WebhookResponse', '10': 'webhooks'},
+    {'1': 'webhooks', '3': 1, '4': 3, '5': 11, '6': '.platform.v1.WebhookData', '10': 'webhooks'},
   ],
 };
 
 /// Descriptor for `ListWebhooksResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listWebhooksResponseDescriptor = $convert.base64Decode(
-    'ChRMaXN0V2ViaG9va3NSZXNwb25zZRI4Cgh3ZWJob29rcxgBIAMoCzIcLnBsYXRmb3JtLnYxLl'
-    'dlYmhvb2tSZXNwb25zZVIId2ViaG9va3M=');
+    'ChRMaXN0V2ViaG9va3NSZXNwb25zZRI0Cgh3ZWJob29rcxgBIAMoCzIYLnBsYXRmb3JtLnYxLl'
+    'dlYmhvb2tEYXRhUgh3ZWJob29rcw==');
 
 @$core.Deprecated('Use deleteWebhookRequestDescriptor instead')
 const DeleteWebhookRequest$json = {
@@ -147,7 +160,7 @@ final $typed_data.Uint8List deliveryResponseDescriptor = $convert.base64Decode(
 const $core.Map<$core.String, $core.dynamic> WebhookServiceBase$json = {
   '1': 'WebhookService',
   '2': [
-    {'1': 'RegisterWebhook', '2': '.platform.v1.RegisterWebhookRequest', '3': '.platform.v1.WebhookResponse'},
+    {'1': 'RegisterWebhook', '2': '.platform.v1.RegisterWebhookRequest', '3': '.platform.v1.RegisterWebhookResponse'},
     {'1': 'ListWebhooks', '2': '.platform.v1.ListWebhooksRequest', '3': '.platform.v1.ListWebhooksResponse'},
     {'1': 'DeleteWebhook', '2': '.platform.v1.DeleteWebhookRequest', '3': '.platform.v1.DeleteWebhookResponse'},
     {'1': 'ListDeliveries', '2': '.platform.v1.ListDeliveriesRequest', '3': '.platform.v1.ListDeliveriesResponse'},
@@ -157,7 +170,8 @@ const $core.Map<$core.String, $core.dynamic> WebhookServiceBase$json = {
 @$core.Deprecated('Use webhookServiceDescriptor instead')
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> WebhookServiceBase$messageJson = {
   '.platform.v1.RegisterWebhookRequest': RegisterWebhookRequest$json,
-  '.platform.v1.WebhookResponse': WebhookResponse$json,
+  '.platform.v1.RegisterWebhookResponse': RegisterWebhookResponse$json,
+  '.platform.v1.WebhookData': WebhookData$json,
   '.platform.v1.ListWebhooksRequest': ListWebhooksRequest$json,
   '.platform.v1.ListWebhooksResponse': ListWebhooksResponse$json,
   '.platform.v1.DeleteWebhookRequest': DeleteWebhookRequest$json,
@@ -169,11 +183,11 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> WebhookSer
 
 /// Descriptor for `WebhookService`. Decode as a `google.protobuf.ServiceDescriptorProto`.
 final $typed_data.Uint8List webhookServiceDescriptor = $convert.base64Decode(
-    'Cg5XZWJob29rU2VydmljZRJUCg9SZWdpc3RlcldlYmhvb2sSIy5wbGF0Zm9ybS52MS5SZWdpc3'
-    'RlcldlYmhvb2tSZXF1ZXN0GhwucGxhdGZvcm0udjEuV2ViaG9va1Jlc3BvbnNlElMKDExpc3RX'
-    'ZWJob29rcxIgLnBsYXRmb3JtLnYxLkxpc3RXZWJob29rc1JlcXVlc3QaIS5wbGF0Zm9ybS52MS'
-    '5MaXN0V2ViaG9va3NSZXNwb25zZRJWCg1EZWxldGVXZWJob29rEiEucGxhdGZvcm0udjEuRGVs'
-    'ZXRlV2ViaG9va1JlcXVlc3QaIi5wbGF0Zm9ybS52MS5EZWxldGVXZWJob29rUmVzcG9uc2USWQ'
-    'oOTGlzdERlbGl2ZXJpZXMSIi5wbGF0Zm9ybS52MS5MaXN0RGVsaXZlcmllc1JlcXVlc3QaIy5w'
-    'bGF0Zm9ybS52MS5MaXN0RGVsaXZlcmllc1Jlc3BvbnNl');
+    'Cg5XZWJob29rU2VydmljZRJcCg9SZWdpc3RlcldlYmhvb2sSIy5wbGF0Zm9ybS52MS5SZWdpc3'
+    'RlcldlYmhvb2tSZXF1ZXN0GiQucGxhdGZvcm0udjEuUmVnaXN0ZXJXZWJob29rUmVzcG9uc2US'
+    'UwoMTGlzdFdlYmhvb2tzEiAucGxhdGZvcm0udjEuTGlzdFdlYmhvb2tzUmVxdWVzdBohLnBsYX'
+    'Rmb3JtLnYxLkxpc3RXZWJob29rc1Jlc3BvbnNlElYKDURlbGV0ZVdlYmhvb2sSIS5wbGF0Zm9y'
+    'bS52MS5EZWxldGVXZWJob29rUmVxdWVzdBoiLnBsYXRmb3JtLnYxLkRlbGV0ZVdlYmhvb2tSZX'
+    'Nwb25zZRJZCg5MaXN0RGVsaXZlcmllcxIiLnBsYXRmb3JtLnYxLkxpc3REZWxpdmVyaWVzUmVx'
+    'dWVzdBojLnBsYXRmb3JtLnYxLkxpc3REZWxpdmVyaWVzUmVzcG9uc2U=');
 

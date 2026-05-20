@@ -9,7 +9,7 @@ import "company.connect.spec.dart" as specs;
 
 /// CompanyService manages company hierarchy.
 extension type CompanyServiceClient (connect.Transport _transport) {
-  Future<platformv1company.CompanyResponse> createCompany(
+  Future<platformv1company.CreateCompanyResponse> createCompany(
     platformv1company.CreateCompanyRequest input, {
     connect.Headers? headers,
     connect.AbortSignal? signal,
@@ -26,7 +26,7 @@ extension type CompanyServiceClient (connect.Transport _transport) {
     );
   }
 
-  Future<platformv1company.CompanyResponse> getCompany(
+  Future<platformv1company.GetCompanyResponse> getCompany(
     platformv1company.GetCompanyRequest input, {
     connect.Headers? headers,
     connect.AbortSignal? signal,
@@ -43,7 +43,7 @@ extension type CompanyServiceClient (connect.Transport _transport) {
     );
   }
 
-  Future<platformv1company.CompanyResponse> updateCompany(
+  Future<platformv1company.UpdateCompanyResponse> updateCompany(
     platformv1company.UpdateCompanyRequest input, {
     connect.Headers? headers,
     connect.AbortSignal? signal,
@@ -77,7 +77,7 @@ extension type CompanyServiceClient (connect.Transport _transport) {
     );
   }
 
-  Future<platformv1company.ListCompaniesResponse> getAncestors(
+  Future<platformv1company.GetAncestorsResponse> getAncestors(
     platformv1company.GetAncestorsRequest input, {
     connect.Headers? headers,
     connect.AbortSignal? signal,
@@ -94,7 +94,7 @@ extension type CompanyServiceClient (connect.Transport _transport) {
     );
   }
 
-  Future<platformv1company.ListCompaniesResponse> getDescendants(
+  Future<platformv1company.GetDescendantsResponse> getDescendants(
     platformv1company.GetDescendantsRequest input, {
     connect.Headers? headers,
     connect.AbortSignal? signal,

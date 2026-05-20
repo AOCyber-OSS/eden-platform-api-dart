@@ -21,9 +21,9 @@ import 'auth.pbjson.dart';
 export 'auth.pb.dart';
 
 abstract class AuthServiceBase extends $pb.GeneratedService {
-  $async.Future<$1.AuthResponse> signUp($pb.ServerContext ctx, $1.SignUpRequest request);
-  $async.Future<$1.AuthResponse> login($pb.ServerContext ctx, $1.LoginRequest request);
-  $async.Future<$1.AuthResponse> refreshToken($pb.ServerContext ctx, $1.RefreshTokenRequest request);
+  $async.Future<$1.SignUpResponse> signUp($pb.ServerContext ctx, $1.SignUpRequest request);
+  $async.Future<$1.LoginResponse> login($pb.ServerContext ctx, $1.LoginRequest request);
+  $async.Future<$1.RefreshTokenResponse> refreshToken($pb.ServerContext ctx, $1.RefreshTokenRequest request);
   $async.Future<$1.LogoutResponse> logout($pb.ServerContext ctx, $1.LogoutRequest request);
   $async.Future<$1.InitiateOIDCResponse> initiateOIDC($pb.ServerContext ctx, $1.InitiateOIDCRequest request);
   $async.Future<$1.InitiateSAMLResponse> initiateSAML($pb.ServerContext ctx, $1.InitiateSAMLRequest request);
