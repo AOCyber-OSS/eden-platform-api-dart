@@ -111,6 +111,26 @@ extension type AuthServiceClient (connect.Transport _transport) {
     );
   }
 
+  /// InitiateSocialLogin starts a consumer social-login flow (Google, Apple,
+  /// Microsoft, Facebook, X). User-scoped — NO company_id. Tokens are delivered
+  /// out-of-band by the GET /auth/social/callback HTTP handler via redirect.
+  Future<platformv1auth.InitiateSocialLoginResponse> initiateSocialLogin(
+    platformv1auth.InitiateSocialLoginRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.AuthService.initiateSocialLogin,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
   Future<platformv1auth.UpdateProfileResponse> updateProfile(
     platformv1auth.UpdateProfileRequest input, {
     connect.Headers? headers,

@@ -15,42 +15,45 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'auth.pb.dart' as $1;
+import 'auth.pb.dart' as $7;
 import 'auth.pbjson.dart';
 
 export 'auth.pb.dart';
 
 abstract class AuthServiceBase extends $pb.GeneratedService {
-  $async.Future<$1.SignUpResponse> signUp($pb.ServerContext ctx, $1.SignUpRequest request);
-  $async.Future<$1.LoginResponse> login($pb.ServerContext ctx, $1.LoginRequest request);
-  $async.Future<$1.RefreshTokenResponse> refreshToken($pb.ServerContext ctx, $1.RefreshTokenRequest request);
-  $async.Future<$1.LogoutResponse> logout($pb.ServerContext ctx, $1.LogoutRequest request);
-  $async.Future<$1.InitiateOIDCResponse> initiateOIDC($pb.ServerContext ctx, $1.InitiateOIDCRequest request);
-  $async.Future<$1.InitiateSAMLResponse> initiateSAML($pb.ServerContext ctx, $1.InitiateSAMLRequest request);
-  $async.Future<$1.UpdateProfileResponse> updateProfile($pb.ServerContext ctx, $1.UpdateProfileRequest request);
+  $async.Future<$7.SignUpResponse> signUp($pb.ServerContext ctx, $7.SignUpRequest request);
+  $async.Future<$7.LoginResponse> login($pb.ServerContext ctx, $7.LoginRequest request);
+  $async.Future<$7.RefreshTokenResponse> refreshToken($pb.ServerContext ctx, $7.RefreshTokenRequest request);
+  $async.Future<$7.LogoutResponse> logout($pb.ServerContext ctx, $7.LogoutRequest request);
+  $async.Future<$7.InitiateOIDCResponse> initiateOIDC($pb.ServerContext ctx, $7.InitiateOIDCRequest request);
+  $async.Future<$7.InitiateSAMLResponse> initiateSAML($pb.ServerContext ctx, $7.InitiateSAMLRequest request);
+  $async.Future<$7.InitiateSocialLoginResponse> initiateSocialLogin($pb.ServerContext ctx, $7.InitiateSocialLoginRequest request);
+  $async.Future<$7.UpdateProfileResponse> updateProfile($pb.ServerContext ctx, $7.UpdateProfileRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
-      case 'SignUp': return $1.SignUpRequest();
-      case 'Login': return $1.LoginRequest();
-      case 'RefreshToken': return $1.RefreshTokenRequest();
-      case 'Logout': return $1.LogoutRequest();
-      case 'InitiateOIDC': return $1.InitiateOIDCRequest();
-      case 'InitiateSAML': return $1.InitiateSAMLRequest();
-      case 'UpdateProfile': return $1.UpdateProfileRequest();
+      case 'SignUp': return $7.SignUpRequest();
+      case 'Login': return $7.LoginRequest();
+      case 'RefreshToken': return $7.RefreshTokenRequest();
+      case 'Logout': return $7.LogoutRequest();
+      case 'InitiateOIDC': return $7.InitiateOIDCRequest();
+      case 'InitiateSAML': return $7.InitiateSAMLRequest();
+      case 'InitiateSocialLogin': return $7.InitiateSocialLoginRequest();
+      case 'UpdateProfile': return $7.UpdateProfileRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
 
   $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx, $core.String methodName, $pb.GeneratedMessage request) {
     switch (methodName) {
-      case 'SignUp': return this.signUp(ctx, request as $1.SignUpRequest);
-      case 'Login': return this.login(ctx, request as $1.LoginRequest);
-      case 'RefreshToken': return this.refreshToken(ctx, request as $1.RefreshTokenRequest);
-      case 'Logout': return this.logout(ctx, request as $1.LogoutRequest);
-      case 'InitiateOIDC': return this.initiateOIDC(ctx, request as $1.InitiateOIDCRequest);
-      case 'InitiateSAML': return this.initiateSAML(ctx, request as $1.InitiateSAMLRequest);
-      case 'UpdateProfile': return this.updateProfile(ctx, request as $1.UpdateProfileRequest);
+      case 'SignUp': return this.signUp(ctx, request as $7.SignUpRequest);
+      case 'Login': return this.login(ctx, request as $7.LoginRequest);
+      case 'RefreshToken': return this.refreshToken(ctx, request as $7.RefreshTokenRequest);
+      case 'Logout': return this.logout(ctx, request as $7.LogoutRequest);
+      case 'InitiateOIDC': return this.initiateOIDC(ctx, request as $7.InitiateOIDCRequest);
+      case 'InitiateSAML': return this.initiateSAML(ctx, request as $7.InitiateSAMLRequest);
+      case 'InitiateSocialLogin': return this.initiateSocialLogin(ctx, request as $7.InitiateSocialLoginRequest);
+      case 'UpdateProfile': return this.updateProfile(ctx, request as $7.UpdateProfileRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

@@ -15,24 +15,27 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'audit.pb.dart' as $0;
+import 'audit.pb.dart' as $5;
 import 'audit.pbjson.dart';
 
 export 'audit.pb.dart';
 
 abstract class AuditServiceBase extends $pb.GeneratedService {
-  $async.Future<$0.ListAuditLogsResponse> listAuditLogs($pb.ServerContext ctx, $0.ListAuditLogsRequest request);
+  $async.Future<$5.ListAuditLogsResponse> listAuditLogs($pb.ServerContext ctx, $5.ListAuditLogsRequest request);
+  $async.Future<$5.IngestBreakGlassEventResponse> ingestBreakGlassEvent($pb.ServerContext ctx, $5.IngestBreakGlassEventRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
-      case 'ListAuditLogs': return $0.ListAuditLogsRequest();
+      case 'ListAuditLogs': return $5.ListAuditLogsRequest();
+      case 'IngestBreakGlassEvent': return $5.IngestBreakGlassEventRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
 
   $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx, $core.String methodName, $pb.GeneratedMessage request) {
     switch (methodName) {
-      case 'ListAuditLogs': return this.listAuditLogs(ctx, request as $0.ListAuditLogsRequest);
+      case 'ListAuditLogs': return this.listAuditLogs(ctx, request as $5.ListAuditLogsRequest);
+      case 'IngestBreakGlassEvent': return this.ingestBreakGlassEvent(ctx, request as $5.IngestBreakGlassEventRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

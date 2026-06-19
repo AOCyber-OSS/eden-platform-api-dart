@@ -15,30 +15,30 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'bridge.pb.dart' as $2;
+import 'bridge.pb.dart' as $9;
 import 'bridge.pbjson.dart';
 
 export 'bridge.pb.dart';
 
 abstract class BridgeServiceBase extends $pb.GeneratedService {
-  $async.Future<$2.ListAdaptersResponse> listAdapters($pb.ServerContext ctx, $2.ListAdaptersRequest request);
-  $async.Future<$2.DispatchActionResponse> dispatchAction($pb.ServerContext ctx, $2.DispatchActionRequest request);
-  $async.Future<$2.ListActionsResponse> listActions($pb.ServerContext ctx, $2.ListActionsRequest request);
+  $async.Future<$9.ListAdaptersResponse> listAdapters($pb.ServerContext ctx, $9.ListAdaptersRequest request);
+  $async.Future<$9.DispatchActionResponse> dispatchAction($pb.ServerContext ctx, $9.DispatchActionRequest request);
+  $async.Future<$9.ListActionsResponse> listActions($pb.ServerContext ctx, $9.ListActionsRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
-      case 'ListAdapters': return $2.ListAdaptersRequest();
-      case 'DispatchAction': return $2.DispatchActionRequest();
-      case 'ListActions': return $2.ListActionsRequest();
+      case 'ListAdapters': return $9.ListAdaptersRequest();
+      case 'DispatchAction': return $9.DispatchActionRequest();
+      case 'ListActions': return $9.ListActionsRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
 
   $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx, $core.String methodName, $pb.GeneratedMessage request) {
     switch (methodName) {
-      case 'ListAdapters': return this.listAdapters(ctx, request as $2.ListAdaptersRequest);
-      case 'DispatchAction': return this.dispatchAction(ctx, request as $2.DispatchActionRequest);
-      case 'ListActions': return this.listActions(ctx, request as $2.ListActionsRequest);
+      case 'ListAdapters': return this.listAdapters(ctx, request as $9.ListAdaptersRequest);
+      case 'DispatchAction': return this.dispatchAction(ctx, request as $9.DispatchActionRequest);
+      case 'ListActions': return this.listActions(ctx, request as $9.ListActionsRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

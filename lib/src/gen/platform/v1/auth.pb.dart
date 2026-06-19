@@ -861,6 +861,141 @@ class InitiateSAMLResponse extends $pb.GeneratedMessage {
   void clearRedirectUrl() => clearField(1);
 }
 
+/// InitiateSocialLoginRequest starts a consumer social-login flow. provider is
+/// one of "google"|"apple"|"microsoft"|"facebook"|"x". redirect_uri is where the
+/// user is sent after auth (Flutter deep-link or web origin) — it MUST match the
+/// server's redirect allowlist.
+class InitiateSocialLoginRequest extends $pb.GeneratedMessage {
+  factory InitiateSocialLoginRequest({
+    $core.String? provider,
+    $core.String? redirectUri,
+  }) {
+    final $result = create();
+    if (provider != null) {
+      $result.provider = provider;
+    }
+    if (redirectUri != null) {
+      $result.redirectUri = redirectUri;
+    }
+    return $result;
+  }
+  InitiateSocialLoginRequest._() : super();
+  factory InitiateSocialLoginRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory InitiateSocialLoginRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InitiateSocialLoginRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'provider')
+    ..aOS(2, _omitFieldNames ? '' : 'redirectUri')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  InitiateSocialLoginRequest clone() => InitiateSocialLoginRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  InitiateSocialLoginRequest copyWith(void Function(InitiateSocialLoginRequest) updates) => super.copyWith((message) => updates(message as InitiateSocialLoginRequest)) as InitiateSocialLoginRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static InitiateSocialLoginRequest create() => InitiateSocialLoginRequest._();
+  InitiateSocialLoginRequest createEmptyInstance() => create();
+  static $pb.PbList<InitiateSocialLoginRequest> createRepeated() => $pb.PbList<InitiateSocialLoginRequest>();
+  @$core.pragma('dart2js:noInline')
+  static InitiateSocialLoginRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InitiateSocialLoginRequest>(create);
+  static InitiateSocialLoginRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get provider => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set provider($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasProvider() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProvider() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get redirectUri => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set redirectUri($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRedirectUri() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRedirectUri() => clearField(2);
+}
+
+/// InitiateSocialLoginResponse carries the provider authorization URL the client
+/// must open, plus the opaque state JWT for client-side correlation. Tokens are
+/// NOT returned here — the HTTP callback delivers them via redirect.
+class InitiateSocialLoginResponse extends $pb.GeneratedMessage {
+  factory InitiateSocialLoginResponse({
+    $core.String? authUrl,
+    $core.String? state,
+  }) {
+    final $result = create();
+    if (authUrl != null) {
+      $result.authUrl = authUrl;
+    }
+    if (state != null) {
+      $result.state = state;
+    }
+    return $result;
+  }
+  InitiateSocialLoginResponse._() : super();
+  factory InitiateSocialLoginResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory InitiateSocialLoginResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InitiateSocialLoginResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'authUrl')
+    ..aOS(2, _omitFieldNames ? '' : 'state')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  InitiateSocialLoginResponse clone() => InitiateSocialLoginResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  InitiateSocialLoginResponse copyWith(void Function(InitiateSocialLoginResponse) updates) => super.copyWith((message) => updates(message as InitiateSocialLoginResponse)) as InitiateSocialLoginResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static InitiateSocialLoginResponse create() => InitiateSocialLoginResponse._();
+  InitiateSocialLoginResponse createEmptyInstance() => create();
+  static $pb.PbList<InitiateSocialLoginResponse> createRepeated() => $pb.PbList<InitiateSocialLoginResponse>();
+  @$core.pragma('dart2js:noInline')
+  static InitiateSocialLoginResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InitiateSocialLoginResponse>(create);
+  static InitiateSocialLoginResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get authUrl => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set authUrl($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAuthUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAuthUrl() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get state => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set state($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearState() => clearField(2);
+}
+
 class UpdateProfileRequest extends $pb.GeneratedMessage {
   factory UpdateProfileRequest({
     $core.String? displayName,
@@ -998,6 +1133,9 @@ class AuthServiceApi {
   ;
   $async.Future<InitiateSAMLResponse> initiateSAML($pb.ClientContext? ctx, InitiateSAMLRequest request) =>
     _client.invoke<InitiateSAMLResponse>(ctx, 'AuthService', 'InitiateSAML', request, InitiateSAMLResponse())
+  ;
+  $async.Future<InitiateSocialLoginResponse> initiateSocialLogin($pb.ClientContext? ctx, InitiateSocialLoginRequest request) =>
+    _client.invoke<InitiateSocialLoginResponse>(ctx, 'AuthService', 'InitiateSocialLogin', request, InitiateSocialLoginResponse())
   ;
   $async.Future<UpdateProfileResponse> updateProfile($pb.ClientContext? ctx, UpdateProfileRequest request) =>
     _client.invoke<UpdateProfileResponse>(ctx, 'AuthService', 'UpdateProfile', request, UpdateProfileResponse())

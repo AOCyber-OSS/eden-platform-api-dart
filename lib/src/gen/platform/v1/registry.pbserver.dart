@@ -15,33 +15,33 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'registry.pb.dart' as $5;
+import 'registry.pb.dart' as $18;
 import 'registry.pbjson.dart';
 
 export 'registry.pb.dart';
 
 abstract class RegistryServiceBase extends $pb.GeneratedService {
-  $async.Future<$5.GetNavItemsResponse> getNavItems($pb.ServerContext ctx, $5.GetNavItemsRequest request);
-  $async.Future<$5.GetWidgetsResponse> getWidgets($pb.ServerContext ctx, $5.GetWidgetsRequest request);
-  $async.Future<$5.GetSearchScopesResponse> getSearchScopes($pb.ServerContext ctx, $5.GetSearchScopesRequest request);
-  $async.Future<$5.GetBadgeCountsResponse> getBadgeCounts($pb.ServerContext ctx, $5.GetBadgeCountsRequest request);
+  $async.Future<$18.GetNavItemsResponse> getNavItems($pb.ServerContext ctx, $18.GetNavItemsRequest request);
+  $async.Future<$18.GetWidgetsResponse> getWidgets($pb.ServerContext ctx, $18.GetWidgetsRequest request);
+  $async.Future<$18.GetSearchScopesResponse> getSearchScopes($pb.ServerContext ctx, $18.GetSearchScopesRequest request);
+  $async.Future<$18.GetBadgeCountsResponse> getBadgeCounts($pb.ServerContext ctx, $18.GetBadgeCountsRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
-      case 'GetNavItems': return $5.GetNavItemsRequest();
-      case 'GetWidgets': return $5.GetWidgetsRequest();
-      case 'GetSearchScopes': return $5.GetSearchScopesRequest();
-      case 'GetBadgeCounts': return $5.GetBadgeCountsRequest();
+      case 'GetNavItems': return $18.GetNavItemsRequest();
+      case 'GetWidgets': return $18.GetWidgetsRequest();
+      case 'GetSearchScopes': return $18.GetSearchScopesRequest();
+      case 'GetBadgeCounts': return $18.GetBadgeCountsRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
 
   $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx, $core.String methodName, $pb.GeneratedMessage request) {
     switch (methodName) {
-      case 'GetNavItems': return this.getNavItems(ctx, request as $5.GetNavItemsRequest);
-      case 'GetWidgets': return this.getWidgets(ctx, request as $5.GetWidgetsRequest);
-      case 'GetSearchScopes': return this.getSearchScopes(ctx, request as $5.GetSearchScopesRequest);
-      case 'GetBadgeCounts': return this.getBadgeCounts(ctx, request as $5.GetBadgeCountsRequest);
+      case 'GetNavItems': return this.getNavItems(ctx, request as $18.GetNavItemsRequest);
+      case 'GetWidgets': return this.getWidgets(ctx, request as $18.GetWidgetsRequest);
+      case 'GetSearchScopes': return this.getSearchScopes(ctx, request as $18.GetSearchScopesRequest);
+      case 'GetBadgeCounts': return this.getBadgeCounts(ctx, request as $18.GetBadgeCountsRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

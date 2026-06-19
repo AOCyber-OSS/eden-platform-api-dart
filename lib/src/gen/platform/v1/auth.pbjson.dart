@@ -202,6 +202,34 @@ final $typed_data.Uint8List initiateSAMLResponseDescriptor = $convert.base64Deco
     'ChRJbml0aWF0ZVNBTUxSZXNwb25zZRIhCgxyZWRpcmVjdF91cmwYASABKAlSC3JlZGlyZWN0VX'
     'Js');
 
+@$core.Deprecated('Use initiateSocialLoginRequestDescriptor instead')
+const InitiateSocialLoginRequest$json = {
+  '1': 'InitiateSocialLoginRequest',
+  '2': [
+    {'1': 'provider', '3': 1, '4': 1, '5': 9, '10': 'provider'},
+    {'1': 'redirect_uri', '3': 2, '4': 1, '5': 9, '10': 'redirectUri'},
+  ],
+};
+
+/// Descriptor for `InitiateSocialLoginRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List initiateSocialLoginRequestDescriptor = $convert.base64Decode(
+    'ChpJbml0aWF0ZVNvY2lhbExvZ2luUmVxdWVzdBIaCghwcm92aWRlchgBIAEoCVIIcHJvdmlkZX'
+    'ISIQoMcmVkaXJlY3RfdXJpGAIgASgJUgtyZWRpcmVjdFVyaQ==');
+
+@$core.Deprecated('Use initiateSocialLoginResponseDescriptor instead')
+const InitiateSocialLoginResponse$json = {
+  '1': 'InitiateSocialLoginResponse',
+  '2': [
+    {'1': 'auth_url', '3': 1, '4': 1, '5': 9, '10': 'authUrl'},
+    {'1': 'state', '3': 2, '4': 1, '5': 9, '10': 'state'},
+  ],
+};
+
+/// Descriptor for `InitiateSocialLoginResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List initiateSocialLoginResponseDescriptor = $convert.base64Decode(
+    'ChtJbml0aWF0ZVNvY2lhbExvZ2luUmVzcG9uc2USGQoIYXV0aF91cmwYASABKAlSB2F1dGhVcm'
+    'wSFAoFc3RhdGUYAiABKAlSBXN0YXRl');
+
 @$core.Deprecated('Use updateProfileRequestDescriptor instead')
 const UpdateProfileRequest$json = {
   '1': 'UpdateProfileRequest',
@@ -238,6 +266,7 @@ const $core.Map<$core.String, $core.dynamic> AuthServiceBase$json = {
     {'1': 'Logout', '2': '.platform.v1.LogoutRequest', '3': '.platform.v1.LogoutResponse'},
     {'1': 'InitiateOIDC', '2': '.platform.v1.InitiateOIDCRequest', '3': '.platform.v1.InitiateOIDCResponse'},
     {'1': 'InitiateSAML', '2': '.platform.v1.InitiateSAMLRequest', '3': '.platform.v1.InitiateSAMLResponse'},
+    {'1': 'InitiateSocialLogin', '2': '.platform.v1.InitiateSocialLoginRequest', '3': '.platform.v1.InitiateSocialLoginResponse'},
     {'1': 'UpdateProfile', '2': '.platform.v1.UpdateProfileRequest', '3': '.platform.v1.UpdateProfileResponse'},
   ],
 };
@@ -258,6 +287,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> AuthServic
   '.platform.v1.InitiateOIDCResponse': InitiateOIDCResponse$json,
   '.platform.v1.InitiateSAMLRequest': InitiateSAMLRequest$json,
   '.platform.v1.InitiateSAMLResponse': InitiateSAMLResponse$json,
+  '.platform.v1.InitiateSocialLoginRequest': InitiateSocialLoginRequest$json,
+  '.platform.v1.InitiateSocialLoginResponse': InitiateSocialLoginResponse$json,
   '.platform.v1.UpdateProfileRequest': UpdateProfileRequest$json,
   '.platform.v1.UpdateProfileResponse': UpdateProfileResponse$json,
 };
@@ -272,6 +303,8 @@ final $typed_data.Uint8List authServiceDescriptor = $convert.base64Decode(
     '0udjEuTG9nb3V0UmVzcG9uc2USUwoMSW5pdGlhdGVPSURDEiAucGxhdGZvcm0udjEuSW5pdGlh'
     'dGVPSURDUmVxdWVzdBohLnBsYXRmb3JtLnYxLkluaXRpYXRlT0lEQ1Jlc3BvbnNlElMKDEluaX'
     'RpYXRlU0FNTBIgLnBsYXRmb3JtLnYxLkluaXRpYXRlU0FNTFJlcXVlc3QaIS5wbGF0Zm9ybS52'
-    'MS5Jbml0aWF0ZVNBTUxSZXNwb25zZRJWCg1VcGRhdGVQcm9maWxlEiEucGxhdGZvcm0udjEuVX'
-    'BkYXRlUHJvZmlsZVJlcXVlc3QaIi5wbGF0Zm9ybS52MS5VcGRhdGVQcm9maWxlUmVzcG9uc2U=');
+    'MS5Jbml0aWF0ZVNBTUxSZXNwb25zZRJoChNJbml0aWF0ZVNvY2lhbExvZ2luEicucGxhdGZvcm'
+    '0udjEuSW5pdGlhdGVTb2NpYWxMb2dpblJlcXVlc3QaKC5wbGF0Zm9ybS52MS5Jbml0aWF0ZVNv'
+    'Y2lhbExvZ2luUmVzcG9uc2USVgoNVXBkYXRlUHJvZmlsZRIhLnBsYXRmb3JtLnYxLlVwZGF0ZV'
+    'Byb2ZpbGVSZXF1ZXN0GiIucGxhdGZvcm0udjEuVXBkYXRlUHJvZmlsZVJlc3BvbnNl');
 

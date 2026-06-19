@@ -53,6 +53,16 @@ abstract final class AuthService {
     platformv1auth.InitiateSAMLResponse.new,
   );
 
+  /// InitiateSocialLogin starts a consumer social-login flow (Google, Apple,
+  /// Microsoft, Facebook, X). User-scoped — NO company_id. Tokens are delivered
+  /// out-of-band by the GET /auth/social/callback HTTP handler via redirect.
+  static const initiateSocialLogin = connect.Spec(
+    '/$name/InitiateSocialLogin',
+    connect.StreamType.unary,
+    platformv1auth.InitiateSocialLoginRequest.new,
+    platformv1auth.InitiateSocialLoginResponse.new,
+  );
+
   static const updateProfile = connect.Spec(
     '/$name/UpdateProfile',
     connect.StreamType.unary,

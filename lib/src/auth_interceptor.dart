@@ -109,6 +109,7 @@ Interceptor authInterceptor({
             RefreshTokenRequest(refreshToken: storedRefreshToken),
           );
 
+          // auth.proto wraps tokens in AuthData (response.auth).
           await tokenStore.setTokens(
             accessToken: response.auth.accessToken,
             refreshToken: response.auth.refreshToken,

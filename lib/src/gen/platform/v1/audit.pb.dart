@@ -14,6 +14,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../../google/protobuf/timestamp.pb.dart' as $0;
+
 class ListAuditLogsRequest extends $pb.GeneratedMessage {
   factory ListAuditLogsRequest({
     $core.String? companyId,
@@ -354,12 +356,258 @@ class AuditLogEntry extends $pb.GeneratedMessage {
   void clearCreatedAt() => clearField(9);
 }
 
+/// IngestBreakGlassEventRequest carries the contents of one JSONL line
+/// from the aoidemergency replay file. The server uses these fields
+/// verbatim (it does NOT recompute or override original_jti /
+/// original_issued_at) — this is by design so the AOAudit timeline
+/// reconstructs the outage window faithfully.
+class IngestBreakGlassEventRequest extends $pb.GeneratedMessage {
+  factory IngestBreakGlassEventRequest({
+    $core.String? originalJti,
+    $0.Timestamp? originalIssuedAt,
+    $core.String? subject,
+    $core.String? tenant,
+    $core.String? scope,
+    $core.String? reason,
+    $core.String? operator,
+    $core.String? manifestDigestB64,
+  }) {
+    final $result = create();
+    if (originalJti != null) {
+      $result.originalJti = originalJti;
+    }
+    if (originalIssuedAt != null) {
+      $result.originalIssuedAt = originalIssuedAt;
+    }
+    if (subject != null) {
+      $result.subject = subject;
+    }
+    if (tenant != null) {
+      $result.tenant = tenant;
+    }
+    if (scope != null) {
+      $result.scope = scope;
+    }
+    if (reason != null) {
+      $result.reason = reason;
+    }
+    if (operator != null) {
+      $result.operator = operator;
+    }
+    if (manifestDigestB64 != null) {
+      $result.manifestDigestB64 = manifestDigestB64;
+    }
+    return $result;
+  }
+  IngestBreakGlassEventRequest._() : super();
+  factory IngestBreakGlassEventRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory IngestBreakGlassEventRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IngestBreakGlassEventRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'originalJti')
+    ..aOM<$0.Timestamp>(2, _omitFieldNames ? '' : 'originalIssuedAt', subBuilder: $0.Timestamp.create)
+    ..aOS(3, _omitFieldNames ? '' : 'subject')
+    ..aOS(4, _omitFieldNames ? '' : 'tenant')
+    ..aOS(5, _omitFieldNames ? '' : 'scope')
+    ..aOS(6, _omitFieldNames ? '' : 'reason')
+    ..aOS(7, _omitFieldNames ? '' : 'operator')
+    ..aOS(8, _omitFieldNames ? '' : 'manifestDigestB64')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  IngestBreakGlassEventRequest clone() => IngestBreakGlassEventRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  IngestBreakGlassEventRequest copyWith(void Function(IngestBreakGlassEventRequest) updates) => super.copyWith((message) => updates(message as IngestBreakGlassEventRequest)) as IngestBreakGlassEventRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IngestBreakGlassEventRequest create() => IngestBreakGlassEventRequest._();
+  IngestBreakGlassEventRequest createEmptyInstance() => create();
+  static $pb.PbList<IngestBreakGlassEventRequest> createRepeated() => $pb.PbList<IngestBreakGlassEventRequest>();
+  @$core.pragma('dart2js:noInline')
+  static IngestBreakGlassEventRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<IngestBreakGlassEventRequest>(create);
+  static IngestBreakGlassEventRequest? _defaultInstance;
+
+  /// original_jti is the UUID minted at issuance time. Must be uuid-shaped.
+  /// Server dedups on this field: re-replay is a no-op.
+  @$pb.TagNumber(1)
+  $core.String get originalJti => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set originalJti($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOriginalJti() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOriginalJti() => clearField(1);
+
+  /// original_issued_at is the timestamp the CLI recorded at JWT issuance.
+  /// Server SETS the audit row's emitted_at to this value (NOT
+  /// request-arrival time). Server rejects values older than 30 days
+  /// (sanity bound — older replays are suspicious).
+  @$pb.TagNumber(2)
+  $0.Timestamp get originalIssuedAt => $_getN(1);
+  @$pb.TagNumber(2)
+  set originalIssuedAt($0.Timestamp v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOriginalIssuedAt() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOriginalIssuedAt() => clearField(2);
+  @$pb.TagNumber(2)
+  $0.Timestamp ensureOriginalIssuedAt() => $_ensure(1);
+
+  /// subject is the JWT 'sub' claim — the principal the break-glass
+  /// credential authenticated.
+  @$pb.TagNumber(3)
+  $core.String get subject => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set subject($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSubject() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSubject() => clearField(3);
+
+  /// tenant is the tenant slug the credential was scoped to (or '*' for
+  /// chassis-wide recovery operations).
+  @$pb.TagNumber(4)
+  $core.String get tenant => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set tenant($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTenant() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTenant() => clearField(4);
+
+  /// scope is the manifest scope: 'admin.recovery' | 'service.recovery'.
+  @$pb.TagNumber(5)
+  $core.String get scope => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set scope($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasScope() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearScope() => clearField(5);
+
+  /// reason is the operator-provided human-readable reason from the
+  /// authorization manifest (≥ 20 chars enforced at issuance time).
+  @$pb.TagNumber(6)
+  $core.String get reason => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set reason($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasReason() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReason() => clearField(6);
+
+  /// operator is the requested_by email from the manifest — the operator
+  /// who drafted the request (NOT the ≥ 2 signers; see manifest_digest_b64
+  /// to recover the full signer set offline).
+  @$pb.TagNumber(7)
+  $core.String get operator => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set operator($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasOperator() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearOperator() => clearField(7);
+
+  /// manifest_digest_b64 is the base64-std-encoded SHA-256 digest of the
+  /// raw manifest bytes the CLI consumed. The replay tool can produce
+  /// the manifest file alongside the replay log; downstream observers
+  /// can recompute and confirm the manifest wasn't substituted post-hoc.
+  @$pb.TagNumber(8)
+  $core.String get manifestDigestB64 => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set manifestDigestB64($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasManifestDigestB64() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearManifestDigestB64() => clearField(8);
+}
+
+class IngestBreakGlassEventResponse extends $pb.GeneratedMessage {
+  factory IngestBreakGlassEventResponse({
+    $core.bool? accepted,
+    $core.String? eventId,
+  }) {
+    final $result = create();
+    if (accepted != null) {
+      $result.accepted = accepted;
+    }
+    if (eventId != null) {
+      $result.eventId = eventId;
+    }
+    return $result;
+  }
+  IngestBreakGlassEventResponse._() : super();
+  factory IngestBreakGlassEventResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory IngestBreakGlassEventResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IngestBreakGlassEventResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'accepted')
+    ..aOS(2, _omitFieldNames ? '' : 'eventId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  IngestBreakGlassEventResponse clone() => IngestBreakGlassEventResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  IngestBreakGlassEventResponse copyWith(void Function(IngestBreakGlassEventResponse) updates) => super.copyWith((message) => updates(message as IngestBreakGlassEventResponse)) as IngestBreakGlassEventResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IngestBreakGlassEventResponse create() => IngestBreakGlassEventResponse._();
+  IngestBreakGlassEventResponse createEmptyInstance() => create();
+  static $pb.PbList<IngestBreakGlassEventResponse> createRepeated() => $pb.PbList<IngestBreakGlassEventResponse>();
+  @$core.pragma('dart2js:noInline')
+  static IngestBreakGlassEventResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<IngestBreakGlassEventResponse>(create);
+  static IngestBreakGlassEventResponse? _defaultInstance;
+
+  /// accepted is true if the event landed (or was idempotently de-duped).
+  /// false (with a non-OK status) indicates a hard rejection.
+  @$pb.TagNumber(1)
+  $core.bool get accepted => $_getBF(0);
+  @$pb.TagNumber(1)
+  set accepted($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAccepted() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAccepted() => clearField(1);
+
+  /// event_id is the server-side UUID assigned to the audit row. Stable
+  /// across replays — re-replay returns the original event_id.
+  @$pb.TagNumber(2)
+  $core.String get eventId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set eventId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasEventId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEventId() => clearField(2);
+}
+
 class AuditServiceApi {
   $pb.RpcClient _client;
   AuditServiceApi(this._client);
 
   $async.Future<ListAuditLogsResponse> listAuditLogs($pb.ClientContext? ctx, ListAuditLogsRequest request) =>
     _client.invoke<ListAuditLogsResponse>(ctx, 'AuditService', 'ListAuditLogs', request, ListAuditLogsResponse())
+  ;
+  $async.Future<IngestBreakGlassEventResponse> ingestBreakGlassEvent($pb.ClientContext? ctx, IngestBreakGlassEventRequest request) =>
+    _client.invoke<IngestBreakGlassEventResponse>(ctx, 'AuditService', 'IngestBreakGlassEvent', request, IngestBreakGlassEventResponse())
   ;
 }
 
