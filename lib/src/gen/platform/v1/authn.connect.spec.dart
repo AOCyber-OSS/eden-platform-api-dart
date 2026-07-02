@@ -21,6 +21,18 @@ abstract final class AuthnService {
   /// Fully-qualified name of the AuthnService service.
   static const name = 'platform.v1.AuthnService';
 
+  /// === Pre-login workspace resolution (Obj 16 / LOGIN-01) ===
+  /// UNAUTHENTICATED, pre-login. Given an email, returns the workspaces
+  /// (tenants) that email's identity may sign in to, so the client can run
+  /// the email-first two-step flow. Enumeration-safe: a non-existent email
+  /// and a legacy/unlinked email are INDISTINGUISHABLE (both RESOLVE_NONE).
+  static const resolveWorkspacesByEmail = connect.Spec(
+    '/$name/ResolveWorkspacesByEmail',
+    connect.StreamType.unary,
+    platformv1authn.ResolveWorkspacesByEmailRequest.new,
+    platformv1authn.ResolveWorkspacesByEmailResponse.new,
+  );
+
   /// === Password flow ===
   static const passwordLoginStart = connect.Spec(
     '/$name/PasswordLoginStart',

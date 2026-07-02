@@ -15,6 +15,9 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../google/protobuf/timestamp.pb.dart' as $0;
+import 'authn.pbenum.dart';
+
+export 'authn.pbenum.dart';
 
 /// LoginNextStep tells the client what authentication step is required next.
 class LoginNextStep extends $pb.GeneratedMessage {
@@ -373,6 +376,178 @@ class SessionSummary extends $pb.GeneratedMessage {
   $core.bool hasIsCurrent() => $_has(8);
   @$pb.TagNumber(9)
   void clearIsCurrent() => clearField(9);
+}
+
+class ResolveWorkspacesByEmailRequest extends $pb.GeneratedMessage {
+  factory ResolveWorkspacesByEmailRequest({
+    $core.String? email,
+  }) {
+    final $result = create();
+    if (email != null) {
+      $result.email = email;
+    }
+    return $result;
+  }
+  ResolveWorkspacesByEmailRequest._() : super();
+  factory ResolveWorkspacesByEmailRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ResolveWorkspacesByEmailRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResolveWorkspacesByEmailRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'email')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ResolveWorkspacesByEmailRequest clone() => ResolveWorkspacesByEmailRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ResolveWorkspacesByEmailRequest copyWith(void Function(ResolveWorkspacesByEmailRequest) updates) => super.copyWith((message) => updates(message as ResolveWorkspacesByEmailRequest)) as ResolveWorkspacesByEmailRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResolveWorkspacesByEmailRequest create() => ResolveWorkspacesByEmailRequest._();
+  ResolveWorkspacesByEmailRequest createEmptyInstance() => create();
+  static $pb.PbList<ResolveWorkspacesByEmailRequest> createRepeated() => $pb.PbList<ResolveWorkspacesByEmailRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ResolveWorkspacesByEmailRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ResolveWorkspacesByEmailRequest>(create);
+  static ResolveWorkspacesByEmailRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get email => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set email($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasEmail() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEmail() => clearField(1);
+}
+
+class ResolveWorkspace extends $pb.GeneratedMessage {
+  factory ResolveWorkspace({
+    $core.String? tenantId,
+    $core.String? displayName,
+  }) {
+    final $result = create();
+    if (tenantId != null) {
+      $result.tenantId = tenantId;
+    }
+    if (displayName != null) {
+      $result.displayName = displayName;
+    }
+    return $result;
+  }
+  ResolveWorkspace._() : super();
+  factory ResolveWorkspace.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ResolveWorkspace.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResolveWorkspace', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'tenantId')
+    ..aOS(2, _omitFieldNames ? '' : 'displayName')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ResolveWorkspace clone() => ResolveWorkspace()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ResolveWorkspace copyWith(void Function(ResolveWorkspace) updates) => super.copyWith((message) => updates(message as ResolveWorkspace)) as ResolveWorkspace;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResolveWorkspace create() => ResolveWorkspace._();
+  ResolveWorkspace createEmptyInstance() => create();
+  static $pb.PbList<ResolveWorkspace> createRepeated() => $pb.PbList<ResolveWorkspace>();
+  @$core.pragma('dart2js:noInline')
+  static ResolveWorkspace getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ResolveWorkspace>(create);
+  static ResolveWorkspace? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get tenantId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set tenantId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasTenantId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTenantId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get displayName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set displayName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDisplayName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDisplayName() => clearField(2);
+}
+
+class ResolveWorkspacesByEmailResponse extends $pb.GeneratedMessage {
+  factory ResolveWorkspacesByEmailResponse({
+    ResolveStatus? status,
+    $core.Iterable<ResolveWorkspace>? workspaces,
+  }) {
+    final $result = create();
+    if (status != null) {
+      $result.status = status;
+    }
+    if (workspaces != null) {
+      $result.workspaces.addAll(workspaces);
+    }
+    return $result;
+  }
+  ResolveWorkspacesByEmailResponse._() : super();
+  factory ResolveWorkspacesByEmailResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ResolveWorkspacesByEmailResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResolveWorkspacesByEmailResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
+    ..e<ResolveStatus>(1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ResolveStatus.RESOLVE_STATUS_UNSPECIFIED, valueOf: ResolveStatus.valueOf, enumValues: ResolveStatus.values)
+    ..pc<ResolveWorkspace>(2, _omitFieldNames ? '' : 'workspaces', $pb.PbFieldType.PM, subBuilder: ResolveWorkspace.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ResolveWorkspacesByEmailResponse clone() => ResolveWorkspacesByEmailResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ResolveWorkspacesByEmailResponse copyWith(void Function(ResolveWorkspacesByEmailResponse) updates) => super.copyWith((message) => updates(message as ResolveWorkspacesByEmailResponse)) as ResolveWorkspacesByEmailResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResolveWorkspacesByEmailResponse create() => ResolveWorkspacesByEmailResponse._();
+  ResolveWorkspacesByEmailResponse createEmptyInstance() => create();
+  static $pb.PbList<ResolveWorkspacesByEmailResponse> createRepeated() => $pb.PbList<ResolveWorkspacesByEmailResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ResolveWorkspacesByEmailResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ResolveWorkspacesByEmailResponse>(create);
+  static ResolveWorkspacesByEmailResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ResolveStatus get status => $_getN(0);
+  @$pb.TagNumber(1)
+  set status(ResolveStatus v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStatus() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<ResolveWorkspace> get workspaces => $_getList(1);
 }
 
 class PasswordLoginStartRequest extends $pb.GeneratedMessage {
@@ -2561,6 +2736,9 @@ class AuthnServiceApi {
   $pb.RpcClient _client;
   AuthnServiceApi(this._client);
 
+  $async.Future<ResolveWorkspacesByEmailResponse> resolveWorkspacesByEmail($pb.ClientContext? ctx, ResolveWorkspacesByEmailRequest request) =>
+    _client.invoke<ResolveWorkspacesByEmailResponse>(ctx, 'AuthnService', 'ResolveWorkspacesByEmail', request, ResolveWorkspacesByEmailResponse())
+  ;
   $async.Future<PasswordLoginStartResponse> passwordLoginStart($pb.ClientContext? ctx, PasswordLoginStartRequest request) =>
     _client.invoke<PasswordLoginStartResponse>(ctx, 'AuthnService', 'PasswordLoginStart', request, PasswordLoginStartResponse())
   ;

@@ -15,6 +15,23 @@ import 'dart:typed_data' as $typed_data;
 
 import '../../google/protobuf/timestamp.pbjson.dart' as $0;
 
+@$core.Deprecated('Use resolveStatusDescriptor instead')
+const ResolveStatus$json = {
+  '1': 'ResolveStatus',
+  '2': [
+    {'1': 'RESOLVE_STATUS_UNSPECIFIED', '2': 0},
+    {'1': 'RESOLVE_STATUS_ONE', '2': 1},
+    {'1': 'RESOLVE_STATUS_MANY', '2': 2},
+    {'1': 'RESOLVE_STATUS_NONE', '2': 3},
+  ],
+};
+
+/// Descriptor for `ResolveStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List resolveStatusDescriptor = $convert.base64Decode(
+    'Cg1SZXNvbHZlU3RhdHVzEh4KGlJFU09MVkVfU1RBVFVTX1VOU1BFQ0lGSUVEEAASFgoSUkVTT0'
+    'xWRV9TVEFUVVNfT05FEAESFwoTUkVTT0xWRV9TVEFUVVNfTUFOWRACEhcKE1JFU09MVkVfU1RB'
+    'VFVTX05PTkUQAw==');
+
 @$core.Deprecated('Use loginNextStepDescriptor instead')
 const LoginNextStep$json = {
   '1': 'LoginNextStep',
@@ -76,6 +93,48 @@ final $typed_data.Uint8List sessionSummaryDescriptor = $convert.base64Decode(
     'aXZlX2F0GAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIMbGFzdEFjdGl2ZUF0Ej'
     'kKCmV4cGlyZXNfYXQYCCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglleHBpcmVz'
     'QXQSHQoKaXNfY3VycmVudBgJIAEoCFIJaXNDdXJyZW50');
+
+@$core.Deprecated('Use resolveWorkspacesByEmailRequestDescriptor instead')
+const ResolveWorkspacesByEmailRequest$json = {
+  '1': 'ResolveWorkspacesByEmailRequest',
+  '2': [
+    {'1': 'email', '3': 1, '4': 1, '5': 9, '10': 'email'},
+  ],
+};
+
+/// Descriptor for `ResolveWorkspacesByEmailRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resolveWorkspacesByEmailRequestDescriptor = $convert.base64Decode(
+    'Ch9SZXNvbHZlV29ya3NwYWNlc0J5RW1haWxSZXF1ZXN0EhQKBWVtYWlsGAEgASgJUgVlbWFpbA'
+    '==');
+
+@$core.Deprecated('Use resolveWorkspaceDescriptor instead')
+const ResolveWorkspace$json = {
+  '1': 'ResolveWorkspace',
+  '2': [
+    {'1': 'tenant_id', '3': 1, '4': 1, '5': 9, '10': 'tenantId'},
+    {'1': 'display_name', '3': 2, '4': 1, '5': 9, '10': 'displayName'},
+  ],
+};
+
+/// Descriptor for `ResolveWorkspace`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resolveWorkspaceDescriptor = $convert.base64Decode(
+    'ChBSZXNvbHZlV29ya3NwYWNlEhsKCXRlbmFudF9pZBgBIAEoCVIIdGVuYW50SWQSIQoMZGlzcG'
+    'xheV9uYW1lGAIgASgJUgtkaXNwbGF5TmFtZQ==');
+
+@$core.Deprecated('Use resolveWorkspacesByEmailResponseDescriptor instead')
+const ResolveWorkspacesByEmailResponse$json = {
+  '1': 'ResolveWorkspacesByEmailResponse',
+  '2': [
+    {'1': 'status', '3': 1, '4': 1, '5': 14, '6': '.platform.v1.ResolveStatus', '10': 'status'},
+    {'1': 'workspaces', '3': 2, '4': 3, '5': 11, '6': '.platform.v1.ResolveWorkspace', '10': 'workspaces'},
+  ],
+};
+
+/// Descriptor for `ResolveWorkspacesByEmailResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resolveWorkspacesByEmailResponseDescriptor = $convert.base64Decode(
+    'CiBSZXNvbHZlV29ya3NwYWNlc0J5RW1haWxSZXNwb25zZRIyCgZzdGF0dXMYASABKA4yGi5wbG'
+    'F0Zm9ybS52MS5SZXNvbHZlU3RhdHVzUgZzdGF0dXMSPQoKd29ya3NwYWNlcxgCIAMoCzIdLnBs'
+    'YXRmb3JtLnYxLlJlc29sdmVXb3Jrc3BhY2VSCndvcmtzcGFjZXM=');
 
 @$core.Deprecated('Use passwordLoginStartRequestDescriptor instead')
 const PasswordLoginStartRequest$json = {
@@ -611,6 +670,7 @@ final $typed_data.Uint8List revokeMySessionResponseDescriptor = $convert.base64D
 const $core.Map<$core.String, $core.dynamic> AuthnServiceBase$json = {
   '1': 'AuthnService',
   '2': [
+    {'1': 'ResolveWorkspacesByEmail', '2': '.platform.v1.ResolveWorkspacesByEmailRequest', '3': '.platform.v1.ResolveWorkspacesByEmailResponse'},
     {'1': 'PasswordLoginStart', '2': '.platform.v1.PasswordLoginStartRequest', '3': '.platform.v1.PasswordLoginStartResponse'},
     {'1': 'PasswordLoginComplete', '2': '.platform.v1.PasswordLoginCompleteRequest', '3': '.platform.v1.PasswordLoginCompleteResponse'},
     {'1': 'ChangePassword', '2': '.platform.v1.ChangePasswordRequest', '3': '.platform.v1.ChangePasswordResponse'},
@@ -634,6 +694,9 @@ const $core.Map<$core.String, $core.dynamic> AuthnServiceBase$json = {
 
 @$core.Deprecated('Use authnServiceDescriptor instead')
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> AuthnServiceBase$messageJson = {
+  '.platform.v1.ResolveWorkspacesByEmailRequest': ResolveWorkspacesByEmailRequest$json,
+  '.platform.v1.ResolveWorkspacesByEmailResponse': ResolveWorkspacesByEmailResponse$json,
+  '.platform.v1.ResolveWorkspace': ResolveWorkspace$json,
   '.platform.v1.PasswordLoginStartRequest': PasswordLoginStartRequest$json,
   '.platform.v1.PasswordLoginStartResponse': PasswordLoginStartResponse$json,
   '.platform.v1.LoginNextStep': LoginNextStep$json,
@@ -677,40 +740,43 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> AuthnServi
 
 /// Descriptor for `AuthnService`. Decode as a `google.protobuf.ServiceDescriptorProto`.
 final $typed_data.Uint8List authnServiceDescriptor = $convert.base64Decode(
-    'CgxBdXRoblNlcnZpY2USZQoSUGFzc3dvcmRMb2dpblN0YXJ0EiYucGxhdGZvcm0udjEuUGFzc3'
-    'dvcmRMb2dpblN0YXJ0UmVxdWVzdBonLnBsYXRmb3JtLnYxLlBhc3N3b3JkTG9naW5TdGFydFJl'
-    'c3BvbnNlEm4KFVBhc3N3b3JkTG9naW5Db21wbGV0ZRIpLnBsYXRmb3JtLnYxLlBhc3N3b3JkTG'
-    '9naW5Db21wbGV0ZVJlcXVlc3QaKi5wbGF0Zm9ybS52MS5QYXNzd29yZExvZ2luQ29tcGxldGVS'
-    'ZXNwb25zZRJZCg5DaGFuZ2VQYXNzd29yZBIiLnBsYXRmb3JtLnYxLkNoYW5nZVBhc3N3b3JkUm'
-    'VxdWVzdBojLnBsYXRmb3JtLnYxLkNoYW5nZVBhc3N3b3JkUmVzcG9uc2USTQoKRW5yb2xsVE9U'
-    'UBIeLnBsYXRmb3JtLnYxLkVucm9sbFRPVFBSZXF1ZXN0Gh8ucGxhdGZvcm0udjEuRW5yb2xsVE'
-    '9UUFJlc3BvbnNlEmUKEkNvbXBsZXRlVE9UUEVucm9sbBImLnBsYXRmb3JtLnYxLkNvbXBsZXRl'
-    'VE9UUEVucm9sbFJlcXVlc3QaJy5wbGF0Zm9ybS52MS5Db21wbGV0ZVRPVFBFbnJvbGxSZXNwb2'
-    '5zZRJWCg1Mb2dpbldpdGhUT1RQEiEucGxhdGZvcm0udjEuTG9naW5XaXRoVE9UUFJlcXVlc3Qa'
-    'Ii5wbGF0Zm9ybS52MS5Mb2dpbldpdGhUT1RQUmVzcG9uc2USegoZQmVnaW5XZWJBdXRoblJlZ2'
-    'lzdHJhdGlvbhItLnBsYXRmb3JtLnYxLkJlZ2luV2ViQXV0aG5SZWdpc3RyYXRpb25SZXF1ZXN0'
-    'Gi4ucGxhdGZvcm0udjEuQmVnaW5XZWJBdXRoblJlZ2lzdHJhdGlvblJlc3BvbnNlEn0KGkZpbm'
-    'lzaFdlYkF1dGhuUmVnaXN0cmF0aW9uEi4ucGxhdGZvcm0udjEuRmluaXNoV2ViQXV0aG5SZWdp'
-    'c3RyYXRpb25SZXF1ZXN0Gi8ucGxhdGZvcm0udjEuRmluaXNoV2ViQXV0aG5SZWdpc3RyYXRpb2'
-    '5SZXNwb25zZRJlChJCZWdpbldlYkF1dGhuTG9naW4SJi5wbGF0Zm9ybS52MS5CZWdpbldlYkF1'
-    'dGhuTG9naW5SZXF1ZXN0GicucGxhdGZvcm0udjEuQmVnaW5XZWJBdXRobkxvZ2luUmVzcG9uc2'
-    'USaAoTRmluaXNoV2ViQXV0aG5Mb2dpbhInLnBsYXRmb3JtLnYxLkZpbmlzaFdlYkF1dGhuTG9n'
-    'aW5SZXF1ZXN0GigucGxhdGZvcm0udjEuRmluaXNoV2ViQXV0aG5Mb2dpblJlc3BvbnNlEokBCh'
-    '5CZWdpbkRpc2NvdmVyYWJsZVdlYkF1dGhuTG9naW4SMi5wbGF0Zm9ybS52MS5CZWdpbkRpc2Nv'
-    'dmVyYWJsZVdlYkF1dGhuTG9naW5SZXF1ZXN0GjMucGxhdGZvcm0udjEuQmVnaW5EaXNjb3Zlcm'
-    'FibGVXZWJBdXRobkxvZ2luUmVzcG9uc2USjAEKH0ZpbmlzaERpc2NvdmVyYWJsZVdlYkF1dGhu'
-    'TG9naW4SMy5wbGF0Zm9ybS52MS5GaW5pc2hEaXNjb3ZlcmFibGVXZWJBdXRobkxvZ2luUmVxdW'
-    'VzdBo0LnBsYXRmb3JtLnYxLkZpbmlzaERpc2NvdmVyYWJsZVdlYkF1dGhuTG9naW5SZXNwb25z'
-    'ZRJTCgxMb2dpbldpdGhQSVYSIC5wbGF0Zm9ybS52MS5Mb2dpbldpdGhQSVZSZXF1ZXN0GiEucG'
-    'xhdGZvcm0udjEuTG9naW5XaXRoUElWUmVzcG9uc2USUAoLQmVnaW5TdGVwVXASHy5wbGF0Zm9y'
-    'bS52MS5CZWdpblN0ZXBVcFJlcXVlc3QaIC5wbGF0Zm9ybS52MS5CZWdpblN0ZXBVcFJlc3Bvbn'
-    'NlElMKDEZpbmlzaFN0ZXBVcBIgLnBsYXRmb3JtLnYxLkZpbmlzaFN0ZXBVcFJlcXVlc3QaIS5w'
-    'bGF0Zm9ybS52MS5GaW5pc2hTdGVwVXBSZXNwb25zZRJZCgZMb2dvdXQSJi5wbGF0Zm9ybS52MS'
-    '5BdXRoblNlcnZpY2VMb2dvdXRSZXF1ZXN0GicucGxhdGZvcm0udjEuQXV0aG5TZXJ2aWNlTG9n'
-    'b3V0UmVzcG9uc2USYgoRTGlzdE15Q3JlZGVudGlhbHMSJS5wbGF0Zm9ybS52MS5MaXN0TXlDcm'
-    'VkZW50aWFsc1JlcXVlc3QaJi5wbGF0Zm9ybS52MS5MaXN0TXlDcmVkZW50aWFsc1Jlc3BvbnNl'
-    'EmUKElJldm9rZU15Q3JlZGVudGlhbBImLnBsYXRmb3JtLnYxLlJldm9rZU15Q3JlZGVudGlhbF'
-    'JlcXVlc3QaJy5wbGF0Zm9ybS52MS5SZXZva2VNeUNyZWRlbnRpYWxSZXNwb25zZQ==');
+    'CgxBdXRoblNlcnZpY2USdwoYUmVzb2x2ZVdvcmtzcGFjZXNCeUVtYWlsEiwucGxhdGZvcm0udj'
+    'EuUmVzb2x2ZVdvcmtzcGFjZXNCeUVtYWlsUmVxdWVzdBotLnBsYXRmb3JtLnYxLlJlc29sdmVX'
+    'b3Jrc3BhY2VzQnlFbWFpbFJlc3BvbnNlEmUKElBhc3N3b3JkTG9naW5TdGFydBImLnBsYXRmb3'
+    'JtLnYxLlBhc3N3b3JkTG9naW5TdGFydFJlcXVlc3QaJy5wbGF0Zm9ybS52MS5QYXNzd29yZExv'
+    'Z2luU3RhcnRSZXNwb25zZRJuChVQYXNzd29yZExvZ2luQ29tcGxldGUSKS5wbGF0Zm9ybS52MS'
+    '5QYXNzd29yZExvZ2luQ29tcGxldGVSZXF1ZXN0GioucGxhdGZvcm0udjEuUGFzc3dvcmRMb2dp'
+    'bkNvbXBsZXRlUmVzcG9uc2USWQoOQ2hhbmdlUGFzc3dvcmQSIi5wbGF0Zm9ybS52MS5DaGFuZ2'
+    'VQYXNzd29yZFJlcXVlc3QaIy5wbGF0Zm9ybS52MS5DaGFuZ2VQYXNzd29yZFJlc3BvbnNlEk0K'
+    'CkVucm9sbFRPVFASHi5wbGF0Zm9ybS52MS5FbnJvbGxUT1RQUmVxdWVzdBofLnBsYXRmb3JtLn'
+    'YxLkVucm9sbFRPVFBSZXNwb25zZRJlChJDb21wbGV0ZVRPVFBFbnJvbGwSJi5wbGF0Zm9ybS52'
+    'MS5Db21wbGV0ZVRPVFBFbnJvbGxSZXF1ZXN0GicucGxhdGZvcm0udjEuQ29tcGxldGVUT1RQRW'
+    '5yb2xsUmVzcG9uc2USVgoNTG9naW5XaXRoVE9UUBIhLnBsYXRmb3JtLnYxLkxvZ2luV2l0aFRP'
+    'VFBSZXF1ZXN0GiIucGxhdGZvcm0udjEuTG9naW5XaXRoVE9UUFJlc3BvbnNlEnoKGUJlZ2luV2'
+    'ViQXV0aG5SZWdpc3RyYXRpb24SLS5wbGF0Zm9ybS52MS5CZWdpbldlYkF1dGhuUmVnaXN0cmF0'
+    'aW9uUmVxdWVzdBouLnBsYXRmb3JtLnYxLkJlZ2luV2ViQXV0aG5SZWdpc3RyYXRpb25SZXNwb2'
+    '5zZRJ9ChpGaW5pc2hXZWJBdXRoblJlZ2lzdHJhdGlvbhIuLnBsYXRmb3JtLnYxLkZpbmlzaFdl'
+    'YkF1dGhuUmVnaXN0cmF0aW9uUmVxdWVzdBovLnBsYXRmb3JtLnYxLkZpbmlzaFdlYkF1dGhuUm'
+    'VnaXN0cmF0aW9uUmVzcG9uc2USZQoSQmVnaW5XZWJBdXRobkxvZ2luEiYucGxhdGZvcm0udjEu'
+    'QmVnaW5XZWJBdXRobkxvZ2luUmVxdWVzdBonLnBsYXRmb3JtLnYxLkJlZ2luV2ViQXV0aG5Mb2'
+    'dpblJlc3BvbnNlEmgKE0ZpbmlzaFdlYkF1dGhuTG9naW4SJy5wbGF0Zm9ybS52MS5GaW5pc2hX'
+    'ZWJBdXRobkxvZ2luUmVxdWVzdBooLnBsYXRmb3JtLnYxLkZpbmlzaFdlYkF1dGhuTG9naW5SZX'
+    'Nwb25zZRKJAQoeQmVnaW5EaXNjb3ZlcmFibGVXZWJBdXRobkxvZ2luEjIucGxhdGZvcm0udjEu'
+    'QmVnaW5EaXNjb3ZlcmFibGVXZWJBdXRobkxvZ2luUmVxdWVzdBozLnBsYXRmb3JtLnYxLkJlZ2'
+    'luRGlzY292ZXJhYmxlV2ViQXV0aG5Mb2dpblJlc3BvbnNlEowBCh9GaW5pc2hEaXNjb3ZlcmFi'
+    'bGVXZWJBdXRobkxvZ2luEjMucGxhdGZvcm0udjEuRmluaXNoRGlzY292ZXJhYmxlV2ViQXV0aG'
+    '5Mb2dpblJlcXVlc3QaNC5wbGF0Zm9ybS52MS5GaW5pc2hEaXNjb3ZlcmFibGVXZWJBdXRobkxv'
+    'Z2luUmVzcG9uc2USUwoMTG9naW5XaXRoUElWEiAucGxhdGZvcm0udjEuTG9naW5XaXRoUElWUm'
+    'VxdWVzdBohLnBsYXRmb3JtLnYxLkxvZ2luV2l0aFBJVlJlc3BvbnNlElAKC0JlZ2luU3RlcFVw'
+    'Eh8ucGxhdGZvcm0udjEuQmVnaW5TdGVwVXBSZXF1ZXN0GiAucGxhdGZvcm0udjEuQmVnaW5TdG'
+    'VwVXBSZXNwb25zZRJTCgxGaW5pc2hTdGVwVXASIC5wbGF0Zm9ybS52MS5GaW5pc2hTdGVwVXBS'
+    'ZXF1ZXN0GiEucGxhdGZvcm0udjEuRmluaXNoU3RlcFVwUmVzcG9uc2USWQoGTG9nb3V0EiYucG'
+    'xhdGZvcm0udjEuQXV0aG5TZXJ2aWNlTG9nb3V0UmVxdWVzdBonLnBsYXRmb3JtLnYxLkF1dGhu'
+    'U2VydmljZUxvZ291dFJlc3BvbnNlEmIKEUxpc3RNeUNyZWRlbnRpYWxzEiUucGxhdGZvcm0udj'
+    'EuTGlzdE15Q3JlZGVudGlhbHNSZXF1ZXN0GiYucGxhdGZvcm0udjEuTGlzdE15Q3JlZGVudGlh'
+    'bHNSZXNwb25zZRJlChJSZXZva2VNeUNyZWRlbnRpYWwSJi5wbGF0Zm9ybS52MS5SZXZva2VNeU'
+    'NyZWRlbnRpYWxSZXF1ZXN0GicucGxhdGZvcm0udjEuUmV2b2tlTXlDcmVkZW50aWFsUmVzcG9u'
+    'c2U=');
 
 const $core.Map<$core.String, $core.dynamic> EndUserSessionServiceBase$json = {
   '1': 'EndUserSessionService',

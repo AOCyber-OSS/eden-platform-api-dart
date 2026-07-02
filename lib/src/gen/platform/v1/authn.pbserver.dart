@@ -21,6 +21,7 @@ import 'authn.pbjson.dart';
 export 'authn.pb.dart';
 
 abstract class AuthnServiceBase extends $pb.GeneratedService {
+  $async.Future<$8.ResolveWorkspacesByEmailResponse> resolveWorkspacesByEmail($pb.ServerContext ctx, $8.ResolveWorkspacesByEmailRequest request);
   $async.Future<$8.PasswordLoginStartResponse> passwordLoginStart($pb.ServerContext ctx, $8.PasswordLoginStartRequest request);
   $async.Future<$8.PasswordLoginCompleteResponse> passwordLoginComplete($pb.ServerContext ctx, $8.PasswordLoginCompleteRequest request);
   $async.Future<$8.ChangePasswordResponse> changePassword($pb.ServerContext ctx, $8.ChangePasswordRequest request);
@@ -42,6 +43,7 @@ abstract class AuthnServiceBase extends $pb.GeneratedService {
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
+      case 'ResolveWorkspacesByEmail': return $8.ResolveWorkspacesByEmailRequest();
       case 'PasswordLoginStart': return $8.PasswordLoginStartRequest();
       case 'PasswordLoginComplete': return $8.PasswordLoginCompleteRequest();
       case 'ChangePassword': return $8.ChangePasswordRequest();
@@ -66,6 +68,7 @@ abstract class AuthnServiceBase extends $pb.GeneratedService {
 
   $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx, $core.String methodName, $pb.GeneratedMessage request) {
     switch (methodName) {
+      case 'ResolveWorkspacesByEmail': return this.resolveWorkspacesByEmail(ctx, request as $8.ResolveWorkspacesByEmailRequest);
       case 'PasswordLoginStart': return this.passwordLoginStart(ctx, request as $8.PasswordLoginStartRequest);
       case 'PasswordLoginComplete': return this.passwordLoginComplete(ctx, request as $8.PasswordLoginCompleteRequest);
       case 'ChangePassword': return this.changePassword(ctx, request as $8.ChangePasswordRequest);
