@@ -19,6 +19,28 @@ import "authn.connect.spec.dart" as specs;
 /// header. The client calls BeginStepUp(stepup_token), completes the
 /// challenge, calls FinishStepUp, then retries the original RPC.
 extension type AuthnServiceClient (connect.Transport _transport) {
+  /// === Pre-login workspace resolution (Obj 16 / LOGIN-01) ===
+  /// UNAUTHENTICATED, pre-login. Given an email, returns the workspaces
+  /// (tenants) that email's identity may sign in to, so the client can run
+  /// the email-first two-step flow. Enumeration-safe: a non-existent email
+  /// and a legacy/unlinked email are INDISTINGUISHABLE (both RESOLVE_NONE).
+  Future<platformv1authn.ResolveWorkspacesByEmailResponse> resolveWorkspacesByEmail(
+    platformv1authn.ResolveWorkspacesByEmailRequest input, {
+    connect.Headers? headers,
+    connect.AbortSignal? signal,
+    Function(connect.Headers)? onHeader,
+    Function(connect.Headers)? onTrailer,
+  }) {
+    return connect.Client(_transport).unary(
+      specs.AuthnService.resolveWorkspacesByEmail,
+      input,
+      signal: signal,
+      headers: headers,
+      onHeader: onHeader,
+      onTrailer: onTrailer,
+    );
+  }
+
   /// === Password flow ===
   Future<platformv1authn.PasswordLoginStartResponse> passwordLoginStart(
     platformv1authn.PasswordLoginStartRequest input, {
