@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $0;
+import '../../google/protobuf/timestamp.pb.dart' as $1;
 
 /// SelfRecoveryServiceRequestRecoveryRequest carries the tenant slug + the
 /// email entered by the user. Email enumeration defense: the server returns
@@ -23,6 +23,7 @@ class SelfRecoveryServiceRequestRecoveryRequest extends $pb.GeneratedMessage {
   factory SelfRecoveryServiceRequestRecoveryRequest({
     $core.String? tenantSlug,
     $core.String? email,
+    $core.String? clientId,
   }) {
     final $result = create();
     if (tenantSlug != null) {
@@ -30,6 +31,9 @@ class SelfRecoveryServiceRequestRecoveryRequest extends $pb.GeneratedMessage {
     }
     if (email != null) {
       $result.email = email;
+    }
+    if (clientId != null) {
+      $result.clientId = clientId;
     }
     return $result;
   }
@@ -40,6 +44,7 @@ class SelfRecoveryServiceRequestRecoveryRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SelfRecoveryServiceRequestRecoveryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'tenantSlug')
     ..aOS(2, _omitFieldNames ? '' : 'email')
+    ..aOS(3, _omitFieldNames ? '' : 'clientId')
     ..hasRequiredFields = false
   ;
 
@@ -81,6 +86,27 @@ class SelfRecoveryServiceRequestRecoveryRequest extends $pb.GeneratedMessage {
   $core.bool hasEmail() => $_has(1);
   @$pb.TagNumber(2)
   void clearEmail() => clearField(2);
+
+  ///  client_id NAMES the OAuth client the user should be returned to after
+  ///  they set the new password — a NAME, never a URL. The issuer resolves the
+  ///  destination from its own oauth_clients registry, so no caller-supplied
+  ///  address ever reaches a redirect on a password-set path. See the longer
+  ///  note on SendAccountActivationRequest.client_id in identity_admin.proto.
+  ///
+  ///  OPTIONAL, and it MUST NOT become an oracle. This RPC is the anonymous
+  ///  surface whose defining property is that it is always-success and reveals
+  ///  nothing about whether an account exists. An unknown, unregistered, or
+  ///  empty client_id must therefore produce the SAME response, the same
+  ///  timing, and the same outbound mail shape as a known one — it only ever
+  ///  changes where a user who successfully redeems the token is then sent.
+  @$pb.TagNumber(3)
+  $core.String get clientId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasClientId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientId() => clearField(3);
 }
 
 /// SelfRecoveryServiceRequestRecoveryResponse is intentionally empty for v1.
@@ -191,7 +217,8 @@ class SelfRecoveryServiceConsumeRecoveryTokenResponse extends $pb.GeneratedMessa
   factory SelfRecoveryServiceConsumeRecoveryTokenResponse({
     $core.bool? success,
     $core.String? loginSessionToken,
-    $0.Timestamp? expiresAt,
+    $1.Timestamp? expiresAt,
+    $core.String? returnUrl,
   }) {
     final $result = create();
     if (success != null) {
@@ -203,6 +230,9 @@ class SelfRecoveryServiceConsumeRecoveryTokenResponse extends $pb.GeneratedMessa
     if (expiresAt != null) {
       $result.expiresAt = expiresAt;
     }
+    if (returnUrl != null) {
+      $result.returnUrl = returnUrl;
+    }
     return $result;
   }
   SelfRecoveryServiceConsumeRecoveryTokenResponse._() : super();
@@ -212,7 +242,8 @@ class SelfRecoveryServiceConsumeRecoveryTokenResponse extends $pb.GeneratedMessa
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SelfRecoveryServiceConsumeRecoveryTokenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'platform.v1'), createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'success')
     ..aOS(2, _omitFieldNames ? '' : 'loginSessionToken')
-    ..aOM<$0.Timestamp>(3, _omitFieldNames ? '' : 'expiresAt', subBuilder: $0.Timestamp.create)
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'expiresAt', subBuilder: $1.Timestamp.create)
+    ..aOS(4, _omitFieldNames ? '' : 'returnUrl')
     ..hasRequiredFields = false
   ;
 
@@ -256,15 +287,41 @@ class SelfRecoveryServiceConsumeRecoveryTokenResponse extends $pb.GeneratedMessa
   void clearLoginSessionToken() => clearField(2);
 
   @$pb.TagNumber(3)
-  $0.Timestamp get expiresAt => $_getN(2);
+  $1.Timestamp get expiresAt => $_getN(2);
   @$pb.TagNumber(3)
-  set expiresAt($0.Timestamp v) { setField(3, v); }
+  set expiresAt($1.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasExpiresAt() => $_has(2);
   @$pb.TagNumber(3)
   void clearExpiresAt() => clearField(3);
   @$pb.TagNumber(3)
-  $0.Timestamp ensureExpiresAt() => $_ensure(2);
+  $1.Timestamp ensureExpiresAt() => $_ensure(2);
+
+  ///  return_url is where the portal should send the user now that the password
+  ///  is set. It is computed ENTIRELY BY THE SERVER: the issuer looks up the
+  ///  client_id recorded on the token when it was minted, reads that client's
+  ///  registered post-recovery destination out of oauth_clients, and emits it.
+  ///  Nothing a caller sent is echoed here — this field is an output of the
+  ///  registry, not a round-trip of an input.
+  ///
+  ///  It carries NO token, code, or credential, and it never needs to: the user
+  ///  already holds an issuer session by the time they see it (login_session_token
+  ///  above), so the destination is a plain landing URL and the downstream app
+  ///  completes its own OIDC round trip against that session.
+  ///
+  ///  EMPTY is the default and means "stay here" — the portal keeps its existing
+  ///  behaviour and routes to its own profile screen. Empty is what an absent,
+  ///  unknown, or un-configured client_id produces, so the pre-existing portal
+  ///  flow is unchanged by construction rather than by a branch someone has to
+  ///  remember to write.
+  @$pb.TagNumber(4)
+  $core.String get returnUrl => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set returnUrl($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasReturnUrl() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReturnUrl() => clearField(4);
 }
 
 class SelfRecoveryServiceApi {
