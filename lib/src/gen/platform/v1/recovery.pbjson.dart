@@ -13,7 +13,7 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-import '../../google/protobuf/timestamp.pbjson.dart' as $0;
+import '../../google/protobuf/timestamp.pbjson.dart' as $1;
 
 @$core.Deprecated('Use selfRecoveryServiceRequestRecoveryRequestDescriptor instead')
 const SelfRecoveryServiceRequestRecoveryRequest$json = {
@@ -21,13 +21,15 @@ const SelfRecoveryServiceRequestRecoveryRequest$json = {
   '2': [
     {'1': 'tenant_slug', '3': 1, '4': 1, '5': 9, '10': 'tenantSlug'},
     {'1': 'email', '3': 2, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'client_id', '3': 3, '4': 1, '5': 9, '10': 'clientId'},
   ],
 };
 
 /// Descriptor for `SelfRecoveryServiceRequestRecoveryRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List selfRecoveryServiceRequestRecoveryRequestDescriptor = $convert.base64Decode(
     'CilTZWxmUmVjb3ZlcnlTZXJ2aWNlUmVxdWVzdFJlY292ZXJ5UmVxdWVzdBIfCgt0ZW5hbnRfc2'
-    'x1ZxgBIAEoCVIKdGVuYW50U2x1ZxIUCgVlbWFpbBgCIAEoCVIFZW1haWw=');
+    'x1ZxgBIAEoCVIKdGVuYW50U2x1ZxIUCgVlbWFpbBgCIAEoCVIFZW1haWwSGwoJY2xpZW50X2lk'
+    'GAMgASgJUghjbGllbnRJZA==');
 
 @$core.Deprecated('Use selfRecoveryServiceRequestRecoveryResponseDescriptor instead')
 const SelfRecoveryServiceRequestRecoveryResponse$json = {
@@ -59,6 +61,7 @@ const SelfRecoveryServiceConsumeRecoveryTokenResponse$json = {
     {'1': 'success', '3': 1, '4': 1, '5': 8, '10': 'success'},
     {'1': 'login_session_token', '3': 2, '4': 1, '5': 9, '10': 'loginSessionToken'},
     {'1': 'expires_at', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'expiresAt'},
+    {'1': 'return_url', '3': 4, '4': 1, '5': 9, '10': 'returnUrl'},
   ],
 };
 
@@ -67,7 +70,7 @@ final $typed_data.Uint8List selfRecoveryServiceConsumeRecoveryTokenResponseDescr
     'Ci9TZWxmUmVjb3ZlcnlTZXJ2aWNlQ29uc3VtZVJlY292ZXJ5VG9rZW5SZXNwb25zZRIYCgdzdW'
     'NjZXNzGAEgASgIUgdzdWNjZXNzEi4KE2xvZ2luX3Nlc3Npb25fdG9rZW4YAiABKAlSEWxvZ2lu'
     'U2Vzc2lvblRva2VuEjkKCmV4cGlyZXNfYXQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZX'
-    'N0YW1wUglleHBpcmVzQXQ=');
+    'N0YW1wUglleHBpcmVzQXQSHQoKcmV0dXJuX3VybBgEIAEoCVIJcmV0dXJuVXJs');
 
 const $core.Map<$core.String, $core.dynamic> SelfRecoveryServiceBase$json = {
   '1': 'SelfRecoveryService',
@@ -83,7 +86,7 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> SelfRecove
   '.platform.v1.SelfRecoveryServiceRequestRecoveryResponse': SelfRecoveryServiceRequestRecoveryResponse$json,
   '.platform.v1.SelfRecoveryServiceConsumeRecoveryTokenRequest': SelfRecoveryServiceConsumeRecoveryTokenRequest$json,
   '.platform.v1.SelfRecoveryServiceConsumeRecoveryTokenResponse': SelfRecoveryServiceConsumeRecoveryTokenResponse$json,
-  '.google.protobuf.Timestamp': $0.Timestamp$json,
+  '.google.protobuf.Timestamp': $1.Timestamp$json,
 };
 
 /// Descriptor for `SelfRecoveryService`. Decode as a `google.protobuf.ServiceDescriptorProto`.
